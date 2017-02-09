@@ -1,0 +1,126 @@
+@import 'header'
+html, body
+  font-size: 16px / ($ratio)
+  margin: 0
+  padding: 0
+  height: 100%
+  +break-sm
+    font-size: 16px
+  +break-lg
+    font-size: 16px * $ratio
+
+.container
+  overflow-x: hidden
+
+nav.doc-nav
+  position: fixed
+  ul
+    list-style-type: none
+    padding: 0
+    li
+      margin: 0 0 $baseline-height-rem 0
+      a
+        text-decoration: none
+        color: $black
+        font-weight: 800
+        &:hover
+          color: $blue
+      ul
+        li
+          margin: 0 0 0 $baseline-height-rem
+          a
+            font-weight: 400
+
+code pre
+  background: #dadfe1
+  color: $black
+  border-radius: 0.2rem
+  font-family: monospace
+  box-sizing: border-box
+  padding: #{$baseline-height / 2}rem
+  margin: 0 0 $baseline-height-rem 0
+  overflow-x: auto
+
+p code
+  background: #dadfe1
+  color: $black
+  padding: 0.1rem #{$baseline-height / 4}rem
+  white-space: nowrap
+
+.cta
+  padding: 1em 2em
+  background: $blue
+  color: $white
+  text-decoration: none
+  border-radius: $baseline-height-rem
+  display: inline-block
+  +font(2)
+  margin-bottom: $baseline-height-rem
+
+main
+  margin: ($gutter * 2) auto
+
+hr
+  height: 0
+  width: 66.66667%
+  border-top: 1px solid gray
+  margin: 0 auto $baseline-height-rem
+  &.short-rule
+    width: 33.33333%
+  &.long-rule
+    width: 100%
+
++break-sm
+  .wrapper
+    display: flex
+    align-items: stretch
+    margin-bottom: $baseline-height-rem
+    .wrapper-child
+      height: 100%
+      box-sizing: border-box
+      border: 2px solid $blue
+      border-radius: $baseline-height-rem
+      padding: $baseline-height-rem
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      a
+        margin-top: auto
+
+.example-grid
+  margin-bottom: $baseline-height-rem
+  [class*='col-'] > div:not(.row),
+  [class*='block-grid-'] > li > div:not(.row),
+  [class*='block-grid-'] > .block-item > div:not(.row)
+    min-height: 20px
+    background: darken($gray, 50%)
+    color: $white
+    line-height: 1.5
+
+.flex-baseline
+  display: flex
+  flex-direction: row
+  align-items: baseline
+  &.reverse
+    flex-direction: row-reverse
+
+table
+  width: 100%
+  border-spacing: 0
+  border-collapse: collapse
+  text-align: center
+  margin-bottom: $baseline-height-rem
+  thead
+    background: $blue
+    color: $white
+  tbody
+    tr
+      background: $gray
+      color: $black
+      border-bottom: 1px solid $blue
+      &:last-child
+        border: 0
+      &:hover
+        background: $white
+  td, th
+    padding: ($gutter / 2) 0
