@@ -34,12 +34,12 @@ html
                   .wrapper-child
                     h1 Compiled CSS
                     p The pre-compiled version comes with all of the defaults. Included are normalize.css, a 12-column grid with breakpoint classes, a typography modular scale, and developer assistance tools.
-                    a.cta(href="tardig.css") Download CSS
+                    a.cta(href="files/tardig.css") Download CSS
                 .col-12.col-sm-6
                   .wrapper-child
                     h1 Editable Sass
                     p The Sass version is written modularly, with each component in a separate folder containing a <code>_variables.sass</code> file, which you can use to customize your own version of TARDIG.
-                    a.cta(href="tardig-sass.zip") Download Sass
+                    a.cta(href="files/tardig-sass.zip") Download Sass
 
               p Coming soon are LESS, SCSS, and Stylus ports as well as stripped down versions. For now, you can download the full CSS or Sass files.
 
@@ -447,6 +447,41 @@ html
                 p Codeframing uses the class <code>.development-codeframe</code> and can be used for multiple things. You can set heights on specific elements and use it as a coded wireframe using the grid system. You can also use it in conjunction with DevTools to find errors more easily.
                 p Rather than strictly using DevTools to find errors, the outlining in codeframe will help to instantly find any and all issues, which you can experiment with in DevTools to find a solution.
 
+            article#sass
+              h1 Using Sass
+              p Each component of TARDIG is separated into folders, with the exception of normalize.css because it is third-party. Each of these folders contains partials which can be used to make TARDIG perfectly fit your needs. Apart from the variables files, it is not recommended that you mess with the other files unless you know what you're doing.
+              p TARDIG uses indented Sass (which will soon be ported to SCSS). If you prefer the bracketed syntax, you can write the rest of your project in SCSS and still comfortably use the Sass version of TARDIG in your project. If you don't know Sass, you can read the guide <a href="http://sass-lang.com/guide">here</a>. This guide includes references to both indented and bracketed versions of Sass.
+
+              section#sass-variables
+                h4 Using Sass Variables
+                p Each component folder includes a file called <code>_variables.sass</code>. You can easily change the values of any major part of TARDIG, like grid size or the typographic scale. Because it is written modularly, each variables partial is sent to a global variables file, which makes the variables work across all files in the boilerplate while still keeping them well-organized.
+
+              section#sass-mixins
+                h4 Using Sass Mixins
+                p Like variables, each component folder has a file called <code>_mixins.sass</code> that creates the functionality of the boilerplate. Each one can be edited to fit your needs, but the ones that will be the most useful to your custom sheets are the breakpoint mixins.
+                .row
+                  .col-sm-8.offset-sm-2
+                    table
+                      thead
+                        tr
+                          th Mixin
+                          th Mininum width
+                      tbody
+                        tr
+                          td break-xs
+                          td 480px
+                        tr
+                          td break-sm
+                          td 768px
+                        tr
+                          td break-md
+                          td 992px
+                        tr
+                          td break-lg
+                          td 1200px
+                p To use these mixins in indented Sass you can write <code>+break-**</code>, and then write your custom styles indented below it, rather than typing out <code>@media only screen and (min-width: *)</code>.
+
+
           .col-0.col-md-3.pull-md-9
             nav.doc-nav
               ul
@@ -483,6 +518,11 @@ html
                   ul
                     li: a(href="#dev-grid") Grid Underlay
                     li: a(href="#dev-codeframe") Codeframe
+                li
+                  a(href="#sass") Using Sass
+                  ul
+                    li: a(href="#sass-variables") Variables
+                    li: a(href="#sass-mixins") Mixins
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js")
     script(src="script/main.js")
