@@ -1,13 +1,13 @@
 @import 'header'
 html, body
-  font-size: 16px / ($ratio)
+  font-size: 16px / $scale
   margin: 0
   padding: 0
   height: 100%
   +break-sm
     font-size: 16px
   +break-lg
-    font-size: 16px * $ratio
+    font-size: 16px * $scale
 
 .container
   overflow-x: hidden
@@ -92,13 +92,12 @@ hr
 
 .example-grid
   margin-bottom: $baseline-height-rem
-  [class*='col-'] > div:not(.row),
-  [class*='block-grid-'] > li > div:not(.row),
-  [class*='block-grid-'] > .block-item > div:not(.row)
-    min-height: 20px
-    background: darken($gray, 50%)
-    color: $white
-    line-height: 1.5
+  [class*='col'],
+  [class*='block-grid-'] > li,
+  [class*='block-grid-'] > .block-item
+    background: lighten($blue, 10%)
+    color: darken($blue, 20%)
+    border: 1px solid $blue
 
 .flex-baseline
   display: flex
