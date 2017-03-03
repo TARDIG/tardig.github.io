@@ -3082,7 +3082,8 @@ pre code {
   display: block;
   padding: 10px;
   border: 1px solid #dadfe1;
-  margin: 0 auto; }
+  margin: 0 auto;
+  overflow-x: auto; }
   pre code span {
     margin: 0;
     padding: 0;
@@ -3219,3 +3220,19 @@ table {
   padding: 1.5rem; }
   .flag p:last-child, .media p:last-child, .flex-media p:last-child {
     margin-bottom: 0; }
+  .flag img, .media img, .flex-media img {
+    width: 32px;
+    height: auto; }
+    @media only screen and (min-width: 480px) {
+      .flag img, .media img, .flex-media img {
+        width: 64px; } }
+  .flag .media-left, .media .media-left, .flex-media .media-left {
+    margin-right: 1rem; }
+    @media only screen and (min-width: 480px) {
+      .flag .media-left, .media .media-left, .flex-media .media-left {
+        margin-right: 2rem; } }
+  .flag .media-right, .media .media-right, .flex-media .media-right {
+    margin-left: 1rem; }
+    @media only screen and (min-width: 480px) {
+      .flag .media-right, .media .media-right, .flex-media .media-right {
+        margin-left: 2rem; } }

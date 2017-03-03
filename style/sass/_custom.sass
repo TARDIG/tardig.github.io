@@ -55,6 +55,7 @@ pre code
   padding: 10px
   border: 1px solid #dadfe1
   margin: 0 auto
+  overflow-x: auto
   span
     margin: 0
     padding: 0
@@ -168,3 +169,16 @@ table
   padding: $baseline-height-rem
   p:last-child
     margin-bottom: 0
+  img
+    width: 32px
+    height: auto
+    +break-xs
+      width: 64px
+  .media-left
+    margin-right: 1rem
+    +break-xs
+      margin-right: 2rem
+  .media-right
+    margin-left: 1rem
+    +break-xs
+      margin-left: 2rem
