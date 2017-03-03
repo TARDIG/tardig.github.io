@@ -1,0 +1,31 @@
+section#thegrid-alignment
+  h4 Alignment &amp; Ordering
+  p TARDIG supports pushes, pulls, and offsets using static or responsive classes.
+  p Offsets replicate "missing" columns, allowing you to center or right-align content to the grid.
+  p Pushes and pulls use absolute positioning to push or pull content by a set number of columns. You can use this for content ordering, keeping your markup SEO-friendly by placing more important content first while maintaining your design, or moving things based on screen dimensions.
+
+  pre: code
+    +code('div', 'row')
+      +code('div', 'col-md-9 push-md-3')
+      +code('div', 'col-0 col-md-3 pull-md-9')
+
+  p This is the layout this docs page is written in. The first column section is 12 columns on screens below 768px, and 9 columns pushed right by 3 columns on screens larger than 768px.
+  p The second column section is hidden on screens smaller than 768px, and 3 columns wide on screens larger than 768px pulled to the left by 9 columns. This creates a sidebar with the content in the markup first.
+
+  .row
+    .col-sm-8.offset-sm-2
+      table
+        thead
+          tr
+            th Feature
+            th Class
+        tbody
+          tr
+            td push
+            td .push-**-*
+          tr
+            td pull
+            td .pull-**-*
+          tr
+            td offset
+            td .offset-**-*

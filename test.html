@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="charset" content="utf-8">
+    <meta name="viewport" content="width=device-width, intiial-scale=1">
+    <meta name="author" content="Mark Little">
+    <title>TARDIG</title>
+    <link rel="stylesheet" href="style/main.css">
+  </head>
+  <body class="responsive">
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-4">
+            <h1>TARDIG<small>.css</small></h1>
+          </div>
+          <div class="col-xs-8">
+            <nav>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="docs.html">Docs</a></li>
+                <li><a href="https://github.com/TARDIG/tardig" target="_blank">GitHub</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 push-md-3">
+            <article id="getting-started">
+              <h2>Getting Started</h2>
+              <p>Currently, TARDIG comes in two versions: pre-compiled CSS and editable Sass.</p>
+              <div class="row wrapper text-center">
+                <div class="col-12 col-sm-6">
+                  <div class="wrapper-child">
+                    <h1>Compiled CSS</h1>
+                    <p>The pre-compiled version comes with all of the defaults. Included are normalize.css, a 12-column grid with breakpoint classes, a typography modular scale, and developer assistance tools.</p><a class="cta" href="files/tardig.css">Download CSS</a>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="wrapper-child">
+                    <h1>Editable Sass</h1>
+                    <p>The Sass version is written modularly, with each component in a separate folder containing a #[code _variables.sass} file, which you can use to customize your own version of TARDIG.</p><a class="cta" href="files/tardig-sass.zip">Download Sass</a>
+                  </div>
+                </div>
+              </div>
+              <p>Coming soon are LESS, SCSS, and Stylus ports as well as stripped down versions. For now, you can download the full CSS or Sass files.</p>
+            </article>
+            <hr class="long-rule">
+            <article id="overview">
+              <h1>Overview</h1>
+              <section id="overview-introduction">
+                <h4>Introduction</h4>
+                <p>TARDIG contains 4 main features: normalize.css, a mobile-first grid system, a modular type scale, and development assistance tools.</p>
+                <p>All classes with a breakpoint segment can also be written as a static class, omitting the breakpoint segment to use that styling across all screen sizes. For example, #[code .col-xs-10} could be written as #[code .col-10}</p>
+                <p>Throughout this documentation, within class names, #[code -**} represents the breakpoint segment of a class. #[code -*} represents the desired effect. For example, the 6 in #[code .col-sm-6} would mean that the column spans 6 available columns.</p>
+              </section>
+              <section id="overview-thegrid">
+                <h4>The Grid Overview</h4>
+                <div class="row hide show-xs-block">
+                  <div class="col-md-8 offset-md-2">#[code 
+                      <pre>&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row padded&quot;
+    &lt;div class=&quot;col-4 col-md-2&quot;&gt;...&lt;/div&gt;
+    &lt;div class=&quot;col-8 col-md-10&quot;&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;row padded&quot;&gt;
+    &lt;div class=&quot;col-md-3&quot;&gt;...&lt;/div&gt;
+    &lt;div class=&quot;col-md-3&quot;&gt;...&lt;/div&gt;
+    &lt;div class=&quot;col-md-3&quot;&gt;...&lt;/div&gt;
+    &lt;div class=&quot;col-md-3&quot;&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;ul class=&quot;block-grid-xs-6 padded&quot;&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div class=&quot;row padded&quot;&gt;
+    &lt;div class=&quot;col-0 col-xs-4&quot;&gt;...&lt;/div&gt;
+    &lt;div class=&quot;col-12 col-xs-8&quot;&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>}</div>
+                </div>
+                <div class="example-grid hide show-xs-block">
+                  <div class="row padded">
+                    <div class="col-4 col-md-2"></div>
+                    <div class="col-8 col-md-10"></div>
+                  </div>
+                  <div class="row padded">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3"></div>
+                  </div>
+                  <ul class="block-grid-xs-6 padded">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <div class="row padded">
+                    <div class="col-0 col-xs-4"></div>
+                    <div class="col-12 col-xs-8"></div>
+                  </div>
+                </div>
+                <p>Rows must be wrapped in a #[code .container} to preserve alignment and paddings. Only columns should be direct children of rows, and columns should contain the content of the page.</p>
+                <p>Block grids are supported, and #[code .block-grid-**-*} acts as a row. If you use the block grid as an unordered list, a classless #[code li} element acts as a column. Alternatively, you can make a #[code div} a block grid, and the direct children should all have the class #[code .block-item}. A block grid can be as many columns as your grid supports. By default, that is 12.</p>
+                <p>In both block grids and standard grids, columns that exceed the number of available columns will wrap to the next line. Columns do not have to equal the total amount either.</p>
+                <p>Pushes, pulls, offsets, padding, and display classes are also included with responsive and static versions.</p>
+                <p>Containers, rows, columns, block grids, and block items (or &lt;li&gt;s) are given box-sizing: border-box to maintain proper sizing. Unlike most other frameworks and boilerplates, no other element has been modified. This makes it easier to have full control of your design.</p>
+                <div class="text-center"><a class="cta" href="#thegrid">Learn More</a></div>
+              </section>
+              <section id="overview-typography">
+                <h4>Typography Overview</h4>
+                <div class="example-typography">
+                  <ul class="block-grid-7 flex-baseline reverse">
+                    <li>
+                      <h1>h1</h1>
+                    </li>
+                    <li>
+                      <h2>h2</h2>
+                    </li>
+                    <li>
+                      <h3>h3</h3>
+                    </li>
+                    <li>
+                      <h4>h4</h4>
+                    </li>
+                    <li>
+                      <h5>h5</h5>
+                    </li>
+                    <li>
+                      <h6>h6</h6>
+                    </li>
+                    <li>
+                      <p>p</p>
+                    </li>
+                  </ul>
+                </div>
+                <p>Fonts are sized in TARDIG using rems and a modular scale. By default, the scale's ratio is 1.125. A #[code p} tag is sized at 1rem and each larger font (h6 through h1) is sized up by multiplying by 1.125. Fonts smaller than 1rem are divided by 1.125.</p>
+                <p>Line heights are calculated based on a baseline-height. The default is 1.5 and any font sized 1rem or less has a 1.5 line-height. Each larger font has a line-height determined by the formula: #[code ceil(font-size / baseline-height) * (baseline-height / font-size)}</p>
+                <p>TARDIG sets only the font-size and line-height based on a modular scale. Most other frameworks will pick fonts and various other stylings for you. As this is meant to be a starting point, TARDIG includes a #[code _custom.sass} partial in the typography folder where you can write your own custom styles and import fonts.</p>
+                <p>Also included are static and responsive classes for alignment, decorations, and transforms. Each of these uses the prefix #[code .text}, optionally followed by a breakpoint segment, and the effect suffix.</p>
+                <p>Decoration and transform classes can be cleared on larger screens using #[code -nodecoration} and #[code -notransform}</p>
+                <div class="text-center"><a class="cta" href="#typography">Learn More</a></div>
+              </section>
+              <section id="overview-development">
+                <h4>Development Assistance Overview</h4>
+                <p>Browsers such as Chrome and Firefox have their own built-in developer tools, but sometimes they aren't the easiest way to find errors. TARDIG has a small set of tools created to work side by side with these other tools and make the developer's life easier.</p>
+                <p>Currently, there are 2 tools for developers. These are not to be used in production, and should always be added to the body tag. If you plan on keeping one running for a while, you can put it in your code, but if you're looking for a small error in positioning it is recommended that you include it in something like Chrome's DevTools. Doing that ensures that it won't be saved to your file.</p>
+                <p>First is a grid underlay, using the class #[code .development-grid}. What this does is gives the container element a background of the grid, calculated by your own custom grid or using the default 12-column grid. Gutters are highlighted in pink. Since this is a background, all of your content will be given an opacity, but will still be fully functional and on top.</p>
+                <p>The other developer tool is called codeframing using the class #[code .development-codeframe}. This outlines the container (red), the rows and block-grids (green), and the columns and block-items (blue). This is to be used in conjunction with an element inspector, and is meant to make weirdly rendered elements easier to find. You can also use this to code a basic wireframe, hence the name.</p>
+                <div class="text-center"><a class="cta" href="#development">Learn More</a></div>
+              </section>
+            </article>
+            <hr class="long-rule">
+            <article id="thegrid">
+              <h1>The Grid</h1>
+              <section id="thegrid-containers">
+                <h4>Containers</h4>
+                <p>Grid sections must be wrapped in a #[code .container}. A container is fluid by default, but by adding the class #[code .responsive} to either a parent element or the container itself, it becomes responsive. To help maintain DRY markup, it is recommended to add the #[code .responsive} class to the #[code body} tag if you use multiple containers.</p>
+                <p>Containers are not nestable due to padding issues. The container is given a left and right padding equal to the gutter width.</p>
+                <p>Breakpoints exist at 480px, 768px, 992px, and 1200px. For the standard fluid grid, the width of the container is #[code 100% - (gutter * 2)}. This is also true for screens smaller than 480px.</p>
+                <p>If you're using a responsive grid, the container sizes are:</p>
+                <div class="row">
+                  <div class="col-sm-8 offset-sm-2">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Viewport</th>
+                          <th>Container</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>0 - 479px</td>
+                          <td>100% - (gutter * 2)</td>
+                        </tr>
+                        <tr>
+                          <td>480px - 767px</td>
+                          <td>464px</td>
+                        </tr>
+                        <tr>
+                          <td>768px - 991px</td>
+                          <td>750px</td>
+                        </tr>
+                        <tr>
+                          <td>992px - 1199px</td>
+                          <td>970px</td>
+                        </tr>
+                        <tr>
+                          <td>1200px+</td>
+                          <td>1170px</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-6 offset-xs-3 col-lg-4 offset-lg-4">#[code 
+                      <pre>&lt;div class=&quot;container&quot;&gt;
+  ...
+&lt;/div&gt;</pre>}</div>
+                </div>
+              </section>
+              <section id="thegrid-rows">
+                <h4>Rows</h4>
+                <p>Rows are direct children of containers. Only columns should be direct children of rows. They provide negative left and right margins equal to the gutter width to ensure that non-grid items line up with grid items.</p>
+                <p>You can nest rows thanks to fixed-pixel gutters. Nested rows should reside inside columns, as the negative margin offsets the padding for the gutters.</p>
+                <div class="row">
+                  <div class="col-xs-6 offset-xs-3 col-lg-4 offset-lg-4">#[code 
+                      <pre>&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    ...
+  &lt;/div&gt;
+&lt;/div&gt;</pre>}</div>
+                </div>
+              </section>
+              <section id="thegrid-columns">
+                <h4>Columns</h4>
+                <p>By default, the grid has 12 available columns. You can change this in the Sass version by going into the grid folder and editing the #[code _variables.sass} file.</p>
+                <p>Columns are written with the syntax #[code .col-**-*}, and are written mobile-first.</p>
+                <div class="row">
+                  <div class="col-sm-8 offset-sm-2">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Viewport</th>
+                          <th>Class</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>0px+</td>
+                          <td>.col-*</td>
+                        </tr>
+                        <tr>
+                          <td>480px+</td>
+                          <td>.col-xs-*</td>
+                        </tr>
+                        <tr>
+                          <td>768px+</td>
+                          <td>.col-sm-*</td>
+                        </tr>
+                        <tr>
+                          <td>992px+</td>
+                          <td>.col-md-*</td>
+                        </tr>
+                        <tr>
+                          <td>1200px+</td>
+                          <td>.col-lg-*</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <p>If you only define, for example, a medium screen column (#[code .col-md-*}) then smaller viewports will make that column span 100% of the container.</p>
+                <p>Columns don't need to add up to the maximum number of available per row (12). If they fall short, they will simply leave a space to the right spanning the remainder of the columns. Alternatively, if you exceed the maximum, each grouping will wrap to the next line as a whole.</p>
+                <p>To hide a column on smaller (or larger) screens, you can use the number 0 at the suffix of the class to give it a 0% width and no display.</p>
+              </section>
+              <section id="thegrid-block-grid">
+                <h4>Block Grids</h4>
+                <p>Block grids are shorthand grids with equal-width columns and are perfect for things like image galleries or thumbnails.</p>
+                <p>The syntax is slightly different for block grids. They start with the class #[code .block-grid-**-*} typically on an unordered list, as a row. Like regular rows, block grids can be nested within columns, or other block grids. If you use the block grid in a div, the children (or columns) should have the class #[code .block-item}.</p>
+                <p>The number at the end of the row class should be the number of items in each row, rather than how many columns it will span. For example, #[code .block-grid-4} will have 4 items per row on all screen sizes. The number of items can be from 1 to the maximum number of columns in your grid.</p>
+                <div class="row">
+                  <div class="col-sm-10 offset-sm-1 col-md-8 offset-md-2">#[code 
+                      <pre>&lt;ul class=&quot;block-grid-2 block-grid-sm-4&quot;&gt;
+  &lt;li&gt;...&lt;/li&gt;
+  &lt;li&gt;...&lt;/li&gt;
+  &lt;li&gt;...&lt;/li&gt;
+  &lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+</pre>}#[code 
+                      <pre>&lt;div class=&quot;block-grid-2 block-grid-sm-4&quot;&gt;
+  &lt;div class=&quot;block-item&quot;&gt;...&lt;/div&gt;
+  &lt;div class=&quot;block-item&quot;&gt;...&lt;/div&gt;
+  &lt;div class=&quot;block-item&quot;&gt;...&lt;/div&gt;
+  &lt;div class=&quot;block-item&quot;&gt;...&lt;/div&gt;
+&lt;/div&gt;</pre>}</div>
+                </div>
+              </section>
+              <section id="thegrid-gutters">
+                <h4>Gutters</h4>
+                <p>Gutters in TARDIG are by default 15px on either side of each column. This is the same size used to determine the padding in the container and the negative margin in the rows. You can alter the size in the #[code _variables.sass} file in the grid folder.</p>
+              </section>
+              <section id="thegrid-nesting">
+                <h4>Nesting</h4>
+                <p>Rows and block grids can be nested within columns or block items. This is because they use the same size negative margin as the padding for the gutters to line up properly.</p>
+              </section>
+              <section id="thegrid-alignment">
+                <h4>Alignment &amp; Ordering</h4>
+                <p>TARDIG supports pushes, pulls, and offsets. Offsets essentially replicate "missing" columns to push sections over. You can use this to center or right-align columns. Pushes and pulls are used for ordering sections, which can be helpful for responsive design and SEO.</p>
+                <p>Pushes, pulls, and offsets all support both static and responsive classes.</p>
+                <p>You can override pushes, pulls, and offsets with the suffix 0.</p>
+                <div class="row">
+                  <div class="col-sm-8 offset-sm-2">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Feature</th>
+                          <th>Class</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>push</td>
+                          <td>.push-**-*</td>
+                        </tr>
+                        <tr>
+                          <td>pull</td>
+                          <td>.pull-**-*</td>
+                        </tr>
+                        <tr>
+                          <td>offset</td>
+                          <td>.offset-**-*</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+              <section id="thegrid-display">
+                <h4>Display</h4>
+                <p>TARDIG has static and responsive classes for all hide and show options. As columns have their own class to hide and show them, and are block level elements by default, it is recommended to use this for rows, containers, or non-grid items. They also have static and responsive classes.</p>
+                <div class="row">
+                  <div class="col-sm-8 offset-sm-2">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Display</th>
+                          <th>Class</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>hidden</td>
+                          <td>.hide-**</td>
+                        </tr>
+                        <tr>
+                          <td>inline</td>
+                          <td>.show-**-inline</td>
+                        </tr>
+                        <tr>
+                          <td>inline-block</td>
+                          <td>.show-**-inline-block</td>
+                        </tr>
+                        <tr>
+                          <td>block</td>
+                          <td>.show-**-block</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+            </article>
+            <hr class="long-rule">
+            <article id="typography">
+              <h1>Typography</h1>
+              <section id="type-sizes">
+                <h4>Font Sizing</h4>
+                <p>Fonts are sized using a modular scale and rems. You can set the base font size in pixels in your own custom stylesheet or in the custom partial sheet provided in the typography folder.</p>
+                <p>By default, the scale has the ratio of 1.125, but you can change that using the #[code _variables.sass} file in the typography folder. This means that your p will be 1rem, or your base font size. Each size up is multiplied by 1.125, or whatever you change the custom ratio to.</p>
+                <p>The #[code .lead} class increases the font size to the next level in the scale, while #[code .small} or the element #[code small} decrease the size by next level down the scale.</p>
+                <p>You can also override this using your own custom sheets or the blank custom sheet provided if using a scale doesn't work for you.</p>
+              </section>
+              <section id="type-line-height">
+                <h4>Line Heights</h4>
+                <p>Line heights are based on a baseline height. By default, that is 1.5. Font sizes 1rem and smaller get a line height of 1.5, and anything larger gets calculated by the formula: #[code ceil(font size / base line height) * (base line height / font size)}</p>
+                <p>Like font sizes, line heights can be overwritten in a custom stylesheet.</p>
+              </section>
+              <section id="type-alignment">
+                <h4>Text Alignment</h4>
+                <p>There are 9 text alignment classes. The "last" classes are experimental classes and may not always work.</p>
+                <p>While the "push-up" class isn't a standard alignment class, it still fits in this category. What that does is pushes a block of text up by the negative baseline height to tighten it up with a preceeding block of text. This is useful for things like subheadings.</p>
+                <div class="row">
+                  <div class="col-sm-8 offset-sm-2">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Alignment</th>
+                          <th>Class</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>left</td>
+                          <td>.text-**-left</td>
+                        </tr>
+                        <tr>
+                          <td>right</td>
+                          <td>.text-**-right</td>
+                        </tr>
+                        <tr>
+                          <td>center</td>
+                          <td>.text-**-center</td>
+                        </tr>
+                        <tr>
+                          <td>justify</td>
+                          <td>.text-**-justify</td>
+                        </tr>
+                        <tr>
+                          <td>left-last</td>
+                          <td>.text-**-left-last</td>
+                        </tr>
+                        <tr>
+                          <td>right-last</td>
+                          <td>.text-**-right-last</td>
+                        </tr>
+                        <tr>
+                          <td>center-last</td>
+                          <td>.text-**-center-last</td>
+                        </tr>
+                        <tr>
+                          <td>justify-last</td>
+                          <td>.text-**-justify-last</td>
+                        </tr>
+                        <tr>
+                          <td>push-up</td>
+                          <td>.text-**-push-up</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+              <section id="type-decoration">
+                <h4>Text Decoration</h4>
+                <p>There are 8 different static and responsive decoration classes.</p>
+                <div class="row">
+                  <div class="col-sm-8 offset-sm-2">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Decoration</th>
+                          <th>Class</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>underline</td>
+                          <td>.text-**-underline</td>
+                        </tr>
+                        <tr>
+                          <td>overline</td>
+                          <td>.text-**-overline</td>
+                        </tr>
+                        <tr>
+                          <td>strike</td>
+                          <td>.text-**-strike</td>
+                        </tr>
+                        <tr>
+                          <td>underline-overline</td>
+                          <td>.text-**-underline-overline</td>
+                        </tr>
+                        <tr>
+                          <td>underline-strike</td>
+                          <td>.text-**-underline-strike</td>
+                        </tr>
+                        <tr>
+                          <td>underline-overline-strike</td>
+                          <td>.text-**-underline-overline-strike</td>
+                        </tr>
+                        <tr>
+                          <td>overline-strike</td>
+                          <td>.text-**-overline-strike</td>
+                        </tr>
+                        <tr>
+                          <td>none</td>
+                          <td>.text-**-nodecoration</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+              <section id="type-transform">
+                <h4>Text Transform</h4>
+                <p>There are 6 transformation static and responsive classes.</p>
+                <div class="row">
+                  <div class="col-sm-8 offset-sm-2">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Transformation</th>
+                          <th>Class</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>uppercase</td>
+                          <td>.text-**-uppercase</td>
+                        </tr>
+                        <tr>
+                          <td>lowercase</td>
+                          <td>.text-**-lowercase</td>
+                        </tr>
+                        <tr>
+                          <td>capitalize</td>
+                          <td>.text-**-capitalize</td>
+                        </tr>
+                        <tr>
+                          <td>small caps</td>
+                          <td>.text-**-small-caps</td>
+                        </tr>
+                        <tr>
+                          <td>all small caps</td>
+                          <td>.text-**-all-small-caps</td>
+                        </tr>
+                        <tr>
+                          <td>none</td>
+                          <td>.text-**-notransform</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+            </article>
+            <hr class="long-rule">
+            <article id="dev">
+              <h1>Development Assistance</h1>
+              <p class="text-push-up small">Note: These tools are to be used for testing only and should not appear in the final product.</p>
+              <section id="dev-grid">
+                <h4>Grid Underlay</h4>
+                <p>The grid underlay can be used by adding the class #[code .development-grid} to either the body tag, a parent to the container(s), or a container itself. How this works is it gives all the child elements a transparency and the container gets a background image of the grid using pink as the default color for gutters.</p>
+                <p>Don't worry if you change your number of columns in the grid. Grid Underlay will automatically recalculate the number of columns for you.</p>
+                <p>This is extremely beneficial if you are using a lot of non-grid items to help ensure that they are lining up properly with your grid items.</p>
+              </section>
+              <section id="dev-codeframe">
+                <h4>Codeframe</h4>
+                <p>Codeframing uses the class #[code .development-codeframe} and can be used for multiple things. You can set heights on specific elements and use it as a coded wireframe using the grid system. You can also use it in conjunction with DevTools to find errors more easily.</p>
+                <p>Rather than strictly using DevTools to find errors, the outlining in codeframe will help to instantly find any and all issues, which you can experiment with in DevTools to find a solution.</p>
+              </section>
+            </article>
+            <hr class="long-rule">
+            <article id="components">
+              <h1>Components</h1>
+              <p>TARDIG includes responsive embeds, image helpers, and media objects.</p>
+              <section id="components-embed">
+                <h4>Responsive Embeds</h4>
+                <p>To make your embeds responsive, wrap the embedded element in a container with the class #[code .embed-container}. By default, this is a 4:3 ratio. To change it to a 16:9 ratio, use the class #[code .embed-container-16x9}. To create your own classes in Sass you can call the mixin #[code embedRatio(<em>width, height</em>)}. You can also create new classes in your custom CSS by using the percentage value of the height divided by the width.</p>
+                <div class="embed-container-16x9"><iframe width="560" height="315" src="https://www.youtube.com/embed/L0_BPkHZVeE?rel=0&iv_load_policy=3" frameborder="0" allowfullscreen></iframe></div>
+              </section>
+            </article>
+            <hr class="long-rule">
+            <article id="sass">
+              <h1>Using Sass</h1>
+              <p>Each component of TARDIG is separated into folders, with the exception of normalize.css because it is third-party. Each of these folders contains partials which can be used to make TARDIG perfectly fit your needs. Apart from the variables files, it is not recommended that you mess with the other files unless you know what you're doing.</p>
+              <p>TARDIG uses indented Sass (which will soon be ported to SCSS). If you prefer the bracketed syntax, you can write the rest of your project in SCSS and still comfortably use the Sass version of TARDIG in your project. If you don't know Sass, you can read the guide <a href="http://sass-lang.com/guide">here</a>. This guide includes references to both indented and bracketed versions of Sass.</p>
+              <section id="sass-variables">
+                <h4>Using Sass Variables</h4>
+                <p>Each component folder includes a file called #[code _variables.sass}. You can easily change the values of any major part of TARDIG, like grid size or the typographic scale. Because it is written modularly, each variables partial is sent to a global variables file, which makes the variables work across all files in the boilerplate while still keeping them well-organized.</p>
+              </section>
+              <section id="sass-mixins">
+                <h4>Using Sass Mixins</h4>
+                <p>Like variables, each component folder has a file called #[code _mixins.sass} that creates the functionality of the boilerplate. Each one can be edited to fit your needs, but the ones that will be the most useful to your custom sheets are the breakpoint mixins.</p>
+                <div class="row">
+                  <div class="col-sm-8 offset-sm-2">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Mixin</th>
+                          <th>Mininum width</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>break-xs</td>
+                          <td>480px</td>
+                        </tr>
+                        <tr>
+                          <td>break-sm</td>
+                          <td>768px</td>
+                        </tr>
+                        <tr>
+                          <td>break-md</td>
+                          <td>992px</td>
+                        </tr>
+                        <tr>
+                          <td>break-lg</td>
+                          <td>1200px</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <p>To use these mixins in indented Sass you can write #[code +break-**}, and then write your custom styles indented below it, rather than typing out #[code @media only screen and (min-width: *)}.</p>
+              </section>
+            </article>
+            <hr class="long-rule">
+          </div>
+          <div class="col-0 col-md-3 pull-md-9">
+            <nav class="doc-nav">
+              <ul>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#overview">Overview</a>
+                  <ul>
+                    <li><a href="#overview-introduction">Introduction</a></li>
+                    <li><a href="#overview-thegrid">The Grid</a></li>
+                    <li><a href="#overview-typography">Typography</a></li>
+                    <li><a href="#overview-development">Development Assistance</a></li>
+                  </ul>
+                </li>
+                <li><a href="#thegrid">The Grid</a>
+                  <ul>
+                    <li><a href="#thegrid-containers">Containers</a></li>
+                    <li><a href="#thegrid-rows">Rows</a></li>
+                    <li><a href="#thegrid-columns">Columns</a></li>
+                    <li><a href="#thegrid-block-grid">Block Grid</a></li>
+                    <li><a href="#thegrid-gutters">Gutters</a></li>
+                    <li><a href="#thegrid-nesting">Nesting</a></li>
+                    <li><a href="#thegrid-alignment">Alignment</a></li>
+                    <li><a href="#thegrid-display">Display</a></li>
+                  </ul>
+                </li>
+                <li><a href="#typography">Typography</a>
+                  <ul>
+                    <li><a href="#type-sizes">Font Sizes</a></li>
+                    <li><a href="#type-line-height">Line Heights</a></li>
+                    <li><a href="#type-alignment">Text Alignment</a></li>
+                    <li><a href="#type-decoration">Text Decorations</a></li>
+                    <li><a href="#type-transform">Text Transforms</a></li>
+                  </ul>
+                </li>
+                <li><a href="#dev">Development Assistance</a>
+                  <ul>
+                    <li><a href="#dev-grid">Grid Underlay</a></li>
+                    <li><a href="#dev-codeframe">Codeframe</a></li>
+                  </ul>
+                </li>
+                <li><a href="#components">Components</a>
+                  <ul>
+                    <li><a href="#components-embed">Responsive Embed</a></li>
+                    <li><a href="#components-media">Media Objects</a></li>
+                    <li><a href="#components-images">Images</a></li>
+                  </ul>
+                </li>
+                <li><a href="#sass">Using Sass</a>
+                  <ul>
+                    <li><a href="#sass-variables">Variables</a></li>
+                    <li><a href="#sass-mixins">Mixins</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2017 TARDIG by Mark Little</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="script/main.js"></script>
+  </body>
+</html>

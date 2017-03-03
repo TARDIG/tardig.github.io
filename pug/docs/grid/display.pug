@@ -1,0 +1,29 @@
+section#thegrid-display
+  h4 Display
+  p TARDIG has static and responsive classes for all hide and show options. As columns have their own class to hide and show them, and are block level elements by default, it is recommended to use this for rows, containers, or non-grid items.
+
+  .row
+    .col-sm-8.offset-sm-2
+      table
+        thead
+          tr
+            th Display
+            th Class
+        tbody
+          tr
+            td hidden
+            td .hide-**
+          tr
+            td inline
+            td .show-**-inline
+          tr
+            td inline-block
+            td .show-**-inline-block
+          tr
+            td block
+            td .show-**-block
+
+  pre: code
+    +code('p', 'hide show-md-inline-block')
+
+  p The above will hide a paragraph on screens smaller than 768px, and display them as inline-block elements on screens 768px and larger.

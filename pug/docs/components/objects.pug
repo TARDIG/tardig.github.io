@@ -1,0 +1,117 @@
+section#components-media
+  h4 Media &amp; Flag Objects
+  p There are 3 ways to include media objects. Flexbox Media Objects, Media Objects, and Flag Objects.
+  p Standard media objects are recommended for most cases, but if you need vertical alignment, you'll need to use the flexbox media object or for older browser support, flag objects.
+
+  h5 Media Object
+  p Media objects are wrapped in the container #[code .media], with the children #[code .media-left] and/or #[code .media-right] and #[code .media-body] .
+  p #[code .media-left] and #[code .media-right] MUST be placed before the #[code .media-body] element due to the floating nature of media objects.
+  p The media left and right classes can be attatched directly to the image (or whatever media object you use), as well as to a parent container.
+
+  pre: code
+    +code('div', 'media')
+      +code('img', 'media-left', 'src', '...', true)
+      +code('img', 'media-right', 'src', '...', true)
+      +code('div', 'media-body')
+        +code('p')
+
+  .media
+    img.media-left(src="http://placehold.it/64x64")
+    .media-body
+      h4 Standard media object
+      p.text-push-up This is a standard media object. This utilizes the #[code text-push-up] class on the paragraph tag to tighten it up to the heading tag. The object is floated to the left while the body content is a block-level element to the right. This is useful for blog posts, forums, or anything your heart desires.
+
+  .media
+    img.media-right(src="http://placehold.it/64x64")
+    .media-body
+      h4 Reversed media object
+      p.text-push-up This is a reversed media object, with the object floated right and the content in a block-level element to the left.
+
+  .media
+    img.media-left(src="http://placehold.it/64x64")
+    img.media-right(src="http://placehold.it/64x64")
+    .media-body
+      h4 Double sided media object
+      p.text-push-up This is a media object with objects floated on both sides. Due to the floating nature of the objects, both of them must be placed before the body content in the markup for the standard media object.
+
+  h5 Flag Object
+  p The flag object is a little more versatile than the media object due to it being created with CSS tables, meaning that you can vertically align the objects, body, or both. Because of this, the object should be placed inside a container rather than the class being attached to the object itself.
+  p Because the flag object uses a table-based format, the left object should should be placed before the body content in the markup and the right object should be placed after.
+
+  pre: code
+    +code('div', 'flag')
+        +code('div', 'flag-left flag center')
+          +code('img', '', 'src', '...', true)
+        +code('div', 'flag-body')
+          +code('p')
+        +code('div', 'flag-right')
+          +code('img', '', 'src', '...', true)
+
+  .flag
+    .flag-left
+      img(src="http://placehold.it/64x64")
+    .flag-body
+      h4 Standard flag body
+      p.text-push-up Flag objects, like media objects can have the object on either the left or the right side. The difference is that the right-aligned object should be placed AFTER the body content in the markup. Also, the object should be placed inside a container to allow for vertical alignment.
+
+  .flag
+    .flag-left.flag-middle
+      img(src="http://placehold.it/64x64")
+    .flag-body
+      h4 Middle-aligned object, standard flag body
+      p.text-push-up Flag objects can use the classes #[code .flag-top], #[code .flag-middle], or #[code .flag-bottom] on either the container or any of the elements inside to vertically align either all of the content or specific elements.
+
+  .flag
+    .flag-body
+      h4 Right/bottom-aligned object, standard flag body
+      p.text-push-up This is to showcase that flag objects can be placed to right and bottom-aligned. Only use flag objects if you plan on vertically aligning the objects, since table layouts are generally frowned upon.
+    .flag-right.flag-bottom
+      img(src="http://placehold.it/64x64")
+
+  h5 Flex Media Object
+  p The flexbox media object is very similar to the flag object with the class names of the media object. The two big syntax differences are the addition of the prefix #[code flex-] to the container element and the vertical alignment classes with the prefix #[code media].
+  p Like the flag object, you can put the vertical alignment classes on either the container element, or directly on the object or content elements. Like the media object, you can place classes directly on the object without using a container for them. Content should always be wrapped in a container.
+
+  pre: code
+    +code('div', 'flex-media')
+      +code('img', 'media-left', 'src', '...', true)
+      +code('div', 'media-body')
+        +code('p')
+      +code('img', 'media-right media-bottom', 'src', '...', true)
+
+  .flex-media.media-middle
+    img.media-left(src="http://placehold.it/64x64")
+    .media-body
+      h4 Flexbox media object
+      p.text-push-up Flexbox media objects are kind of a perfect mix of media objects and flag objects. Like flag objects, they can be vertically aligned, and the markup includes the left object above the body content, and the right object below. If you include the vertical alignment class (this time using the prefix #[code media] instead of #[code flag]) to the object.
+
+  .flex-media
+    img.media-left(src="http://placehold.it/64x64")
+    .media-body
+      h4 Double sided flexbox media object
+      p.text-push-up This example uses the left and right tags on the images as well as the vertical alignment tags. This example would work great for blockquotes, with quotation mark icons for your objects.
+    img.media-right.media-bottom(src="http://placehold.it/64x64")
+
+  h5 Nesting
+  p You can nest one media/flag object inside of another. Any of them are nestable interchangably. Below is an example of a standard media object nested inside of a flexbox media object.
+
+  pre: code
+    +code('div', 'flex-media flex-middle')
+      +code('img', 'media-left', 'src', '...')
+      +code('div', 'media-body')
+        +code('p')
+        +code('div', 'media')
+          +code('img', 'media-left', 'src', '...')
+          +code('div', 'media-body')
+            +code('p')
+
+  .flex-media.media-middle
+    img.media-left(src="http://placehold.it/64x64")
+    .media-body
+      h4 Top-level media object (flex)
+      p.text-push-up As you can see, the nested media object is placed inside of the body content of the flex media object. This allows for proper alignment. This flex object is given the class #[code media-middle] to middle-align all elements within the object.
+      .media
+        img.media-left(src="http://placehold.it/50x50")
+        .media-body
+          h4 2nd tier media object (standard)
+          p.text-push-up As this is a nested media object, the #[code media-middle] class styles have been overwritten for this object. Everything is top-aligned as they should be for a standard media object.

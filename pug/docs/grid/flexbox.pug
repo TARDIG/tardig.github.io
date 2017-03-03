@@ -1,0 +1,19 @@
+section#thegrid-flexbox
+  h4 Flexbox
+  p You can use the class #[code .flex-grid] as a container element, or inside of a container to create a flexbox grid. The big difference between this and a standard grid is that you can simply use the class #[code .col] to define a column section, and flexbox will calculate the width for you. You can still use the standard grid classes to determine a specific width.
+
+  pre: code
+    +code('div', 'flex-grid')
+      +code('div', 'row')
+        +code('div', 'col-2')
+        +code('div', 'col')
+        +code('div', 'col')
+
+  p The above example will display a grid with the first column spanning 2 columns, and the next two will spread evenly across the remaining space (totalling five columns each).
+
+  .example-grid
+    .flex-grid
+      .row.padded
+        .col-2
+        .col
+        .col

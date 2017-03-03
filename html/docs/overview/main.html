@@ -1,0 +1,114 @@
+
+<article id="overview">
+  <h1>Overview</h1>
+  <section id="overview-introduction">
+    <h4>Introduction</h4>
+    <p>TARDIG contains 4 main features: normalize.css, a mobile-first grid system, a modular type scale, and development assistance tools.</p>
+    <p>All classes with a breakpoint segment can also be written as a static class, omitting the breakpoint segment to use that styling across all screen sizes. For example, #[code .col-xs-10} could be written as #[code .col-10}</p>
+    <p>Throughout this documentation, within class names, #[code -**} represents the breakpoint segment of a class. #[code -*} represents the desired effect. For example, the 6 in #[code .col-sm-6} would mean that the column spans 6 available columns.</p>
+  </section>
+  <section id="overview-thegrid">
+    <h4>The Grid Overview</h4>
+    <div class="row hide show-xs-block">
+      <div class="col-md-8 offset-md-2">#[code 
+          <pre>&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row padded&quot;
+    &lt;div class=&quot;col-4 col-md-2&quot;&gt;...&lt;/div&gt;
+    &lt;div class=&quot;col-8 col-md-10&quot;&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;row padded&quot;&gt;
+    &lt;div class=&quot;col-md-3&quot;&gt;...&lt;/div&gt;
+    &lt;div class=&quot;col-md-3&quot;&gt;...&lt;/div&gt;
+    &lt;div class=&quot;col-md-3&quot;&gt;...&lt;/div&gt;
+    &lt;div class=&quot;col-md-3&quot;&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;ul class=&quot;block-grid-xs-6 padded&quot;&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div class=&quot;row padded&quot;&gt;
+    &lt;div class=&quot;col-0 col-xs-4&quot;&gt;...&lt;/div&gt;
+    &lt;div class=&quot;col-12 col-xs-8&quot;&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>}</div>
+    </div>
+    <div class="example-grid hide show-xs-block">
+      <div class="row padded">
+        <div class="col-4 col-md-2"></div>
+        <div class="col-8 col-md-10"></div>
+      </div>
+      <div class="row padded">
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+      </div>
+      <ul class="block-grid-xs-6 padded">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="row padded">
+        <div class="col-0 col-xs-4"></div>
+        <div class="col-12 col-xs-8"></div>
+      </div>
+    </div>
+    <p>Rows must be wrapped in a #[code .container} to preserve alignment and paddings. Only columns should be direct children of rows, and columns should contain the content of the page.</p>
+    <p>Block grids are supported, and #[code .block-grid-**-*} acts as a row. If you use the block grid as an unordered list, a classless #[code li} element acts as a column. Alternatively, you can make a #[code div} a block grid, and the direct children should all have the class #[code .block-item}. A block grid can be as many columns as your grid supports. By default, that is 12.</p>
+    <p>In both block grids and standard grids, columns that exceed the number of available columns will wrap to the next line. Columns do not have to equal the total amount either.</p>
+    <p>Pushes, pulls, offsets, padding, and display classes are also included with responsive and static versions.</p>
+    <p>Containers, rows, columns, block grids, and block items (or &lt;li&gt;s) are given box-sizing: border-box to maintain proper sizing. Unlike most other frameworks and boilerplates, no other element has been modified. This makes it easier to have full control of your design.</p>
+    <div class="text-center"><a class="cta" href="#thegrid">Learn More</a></div>
+  </section>
+  <section id="overview-typography">
+    <h4>Typography Overview</h4>
+    <div class="example-typography">
+      <ul class="block-grid-7 flex-baseline reverse">
+        <li>
+          <h1>h1</h1>
+        </li>
+        <li>
+          <h2>h2</h2>
+        </li>
+        <li>
+          <h3>h3</h3>
+        </li>
+        <li>
+          <h4>h4</h4>
+        </li>
+        <li>
+          <h5>h5</h5>
+        </li>
+        <li>
+          <h6>h6</h6>
+        </li>
+        <li>
+          <p>p</p>
+        </li>
+      </ul>
+    </div>
+    <p>Fonts are sized in TARDIG using rems and a modular scale. By default, the scale's ratio is 1.125. A #[code p} tag is sized at 1rem and each larger font (h6 through h1) is sized up by multiplying by 1.125. Fonts smaller than 1rem are divided by 1.125.</p>
+    <p>Line heights are calculated based on a baseline-height. The default is 1.5 and any font sized 1rem or less has a 1.5 line-height. Each larger font has a line-height determined by the formula: #[code ceil(font-size / baseline-height) * (baseline-height / font-size)}</p>
+    <p>TARDIG sets only the font-size and line-height based on a modular scale. Most other frameworks will pick fonts and various other stylings for you. As this is meant to be a starting point, TARDIG includes a #[code _custom.sass} partial in the typography folder where you can write your own custom styles and import fonts.</p>
+    <p>Also included are static and responsive classes for alignment, decorations, and transforms. Each of these uses the prefix #[code .text}, optionally followed by a breakpoint segment, and the effect suffix.</p>
+    <p>Decoration and transform classes can be cleared on larger screens using #[code -nodecoration} and #[code -notransform}</p>
+    <div class="text-center"><a class="cta" href="#typography">Learn More</a></div>
+  </section>
+  <section id="overview-development">
+    <h4>Development Assistance Overview</h4>
+    <p>Browsers such as Chrome and Firefox have their own built-in developer tools, but sometimes they aren't the easiest way to find errors. TARDIG has a small set of tools created to work side by side with these other tools and make the developer's life easier.</p>
+    <p>Currently, there are 2 tools for developers. These are not to be used in production, and should always be added to the body tag. If you plan on keeping one running for a while, you can put it in your code, but if you're looking for a small error in positioning it is recommended that you include it in something like Chrome's DevTools. Doing that ensures that it won't be saved to your file.</p>
+    <p>First is a grid underlay, using the class #[code .development-grid}. What this does is gives the container element a background of the grid, calculated by your own custom grid or using the default 12-column grid. Gutters are highlighted in pink. Since this is a background, all of your content will be given an opacity, but will still be fully functional and on top.</p>
+    <p>The other developer tool is called codeframing using the class #[code .development-codeframe}. This outlines the container (red), the rows and block-grids (green), and the columns and block-items (blue). This is to be used in conjunction with an element inspector, and is meant to make weirdly rendered elements easier to find. You can also use this to code a basic wireframe, hence the name.</p>
+    <div class="text-center"><a class="cta" href="#development">Learn More</a></div>
+  </section>
+</article>
+<hr class="long-rule"/>

@@ -1,96 +1,26 @@
-doctype html
-html
-  head
-    meta(name="charset" content="utf-8")
-    meta(name="viewport" content="width=device-width, intiial-scale=1")
-    meta(name="author" content="Mark Little")
+extends template/layout.pug
+block content
+  article.about
+  .container
+    .row.text-center
+      h1 What is TARDIG?
+      h4.text-push-up Typography and Responsive Design in Grids
+      p TARDIG is a front-end boilerplate designed to be a starting point in the creation of web pages.
+      a.cta(href="docs.html") See Full Documentation
 
-    title TARDIG
+    hr.long-rule
 
-    link(rel="stylesheet" href="style/main.css")
-  body.responsive
-    header
-      .container
-        .row
-          .col-xs-4
-            h1 TARDIG<small>.css</small>
-          .col-xs-8
-            nav
-              ul
-                li: a(href="index.html") Home
-                li: a(href="docs.html") Docs
-                li: a(href="https://github.com/TARDIG/tardig" target="_blank") GitHub
-
-    main
-      article.about
-        .container
-          .row
-            .col-12.text-center
-              h1 What is TARDIG?
-              h4.text-push-up Typography and Responsive Design in Grids
-              p TARDIG is a front-end boilerplate designed to be a starting point in the creation of web pages.
-              a.cta(href="docs.html") See Full Documentation
-
-          hr.long-rule
-
-          h1 Samples
-
-          .example-grid.text-center
-            .flex-grid
-              .row
-                .col-2 1
-                .col-2 2
-                .col-2 3
-
-
-          hr.short-rule
-
-          .row
-            .col-12.col-sm-10.offset-sm-1.col-md-8.offset-md-2
-                code: pre.
-                    #{'<div class="container">'}
-                      #{'<div class="row">'}
-                        #{'<div class="col-10 offset-1 col-sm-8 offset-sm-2">'}
-                          #{'<ul class="block-grid-4 text-center padded">'}
-                            #{'<li>'}
-                              #{'<div>1</div>'}
-                            #{'</li>'}
-                            #{'<li>'}
-                              #{'<div>2</div>'}
-                            #{'</li>'}
-                            #{'<li>'}
-                              #{'<div>3</div>'}
-                            #{'</li>'}
-                            #{'<li>'}
-                              #{'<div>4</div>'}
-                            #{'</li>'}
-                            #{'<li>'}
-                              #{'<div>5</div>'}
-                            #{'</li>'}
-                            #{'<li>'}
-                              #{'<div>6</div>'}
-                            #{'</li>'}
-                            #{'<li>'}
-                              #{'<div>7</div>'}
-                            #{'</li>'}
-                            #{'<li>'}
-                              #{'<div>8</div>'}
-                            #{'</li>'}
-                          #{'</ul>'}
-                        #{'</div>'}
-                      #{'</div>'}
-                    #{'</div>'}
-
-          .example-grid: .row
-            .col-12.col-xs-10.offset-xs-1.col-sm-8.offset-sm-2
-              ul.block-grid-4.text-center.padded
-                li 1
-                li 2
-                li 3
-                li 4
-                li 5
-                li 6
-                li 7
-                li 8
-
-          hr.short-rule
+    .row.text-center
+      p Tardig comes in a vanilla CSS and an indented Sass format. Soon, it will be updated to support SCSS, Less, and Stylus as well.
+      .col-6.col-md-3
+        h4 Normalize.css
+        p Normalize.css is implemented to create browser consistency.
+      .col-6.col-md-3
+        h4 Grid System
+        p The grid system is fluid by default but also comes with a responsive flavor.
+      .col-6.col-md-3
+        h4 Typography
+        p Typography uses a modular scale and a formula to determine smart line heights.
+      .col-6.col-md-3
+        h4 Dev Assistance
+        p Dev Assistance is a set of tools to help troubleshoot errors in coding.

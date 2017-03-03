@@ -1,0 +1,17 @@
+section#overview-typography
+  h4 Typography Overview
+  .example-typography
+    ul.block-grid-7.flex-baseline.reverse
+      li: h1 h1
+      li: h2 h2
+      li: h3 h3
+      li: h4 h4
+      li: h5 h5
+      li: h6 h6
+      li: p p
+
+  p Fonts are sized in TARDIG using rems and a modular scale. By default, the scale's ratio is 1.125. A #[code p] tag is sized at 1rem and each larger font (h6 through h1) is sized up by multiplying by 1.125. Fonts smaller than 1rem are divided by 1.125.
+  p Line heights are calculated using a baseline height. By default, this is 1.5rem, but can be changed in the Sass version.
+  p Also included are static and responsive classes for alignment, decorations, and transforms. Each of these uses the prefix #[code .text], optionally followed by a breakpoint segment, and the effect suffix.
+  p Decoration and transform classes can be cleared on larger screens using #[code -nodecoration] and #[code -notransform]
+  .text-center: a.cta(href="#typography") Learn More

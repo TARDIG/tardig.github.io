@@ -1,0 +1,24 @@
+section#sass-mixins
+  h4 Using Sass Mixins
+  p Like variables, each component folder has a file called #[code _mixins.sass] that creates the functionality of the boilerplate. Each one can be edited to fit your needs, but the ones that will be the most useful to your custom sheets are the breakpoint mixins.
+  .row
+    .col-sm-8.offset-sm-2
+      table
+        thead
+          tr
+            th Mixin
+            th Mininum width
+        tbody
+          tr
+            td break-xs
+            td 480px
+          tr
+            td break-sm
+            td 768px
+          tr
+            td break-md
+            td 992px
+          tr
+            td break-lg
+            td 1200px
+  p To use these mixins in indented Sass you can write #[code +break-**], and then write your custom styles indented below it, rather than typing out #[code @media only screen and (min-width: *)].

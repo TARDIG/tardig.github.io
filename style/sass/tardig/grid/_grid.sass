@@ -58,28 +58,8 @@
 ul[class*='block-grid-']
   list-style-type: none
 
-// Flex Grid
-.flex-grid
-  display: flex
-  flex-flow: column wrap
-
-  .row
-    width: 100%
-    margin-left: 0
-    margin-right: 0
-    display: flex
-    flex-flow: row wrap
-    justify-content: flex-start
-    &::before,
-    &::after
-      display: none
-
-  [class*='col']
-    display: flex
-    flex: auto
-    padding-left: $gutter
-    padding-right: $gutter
-
+// Flexbox Grid
+@import flex-grid
 
 // Standard columns - For all screen sizes (no media queries)
 +column-sizes('')

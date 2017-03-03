@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, intiial-scale=1">
     <meta name="author" content="Mark Little">
     <title>TARDIG</title>
+    <link rel="stylesheet" href="style/fa/css/font-awesome.min.css">
     <link rel="stylesheet" href="style/main.css">
   </head>
   <body class="responsive">
@@ -29,7 +30,7 @@
     <main>
       <div class="container">
         <div class="row">
-          <div class="col-12 col-md-9 push-md-3">
+          <div class="col-md-9 push-md-3">
             <article id="getting-started">
               <h2>Getting Started</h2>
               <p>Currently, TARDIG comes in two versions: pre-compiled CSS and editable Sass.</p>
@@ -37,13 +38,13 @@
                 <div class="col-12 col-sm-6">
                   <div class="wrapper-child">
                     <h1>Compiled CSS</h1>
-                    <p>The pre-compiled version comes with all of the defaults. Included are normalize.css, a 12-column grid with breakpoint classes, a typography modular scale, and developer assistance tools.</p><a class="cta" href="files/tardig.css">Download CSS</a>
+                    <p>The pre-compiled version comes with all of the defaults. Included are normalize.css, a 12-column grid with breakpoint classes, a typography modular scale, and developer assistance tools.</p><a class="cta" href="files/tardig.css" download>Download CSS</a>
                   </div>
                 </div>
                 <div class="col-12 col-sm-6">
                   <div class="wrapper-child">
                     <h1>Editable Sass</h1>
-                    <p>The Sass version is written modularly, with each component in a separate folder containing a <code>_variables.sass</code> file, which you can use to customize your own version of TARDIG.</p><a class="cta" href="files/tardig-sass.zip">Download Sass</a>
+                    <p>The Sass version is written modularly, with each component in a separate folder containing a <code>_variables.sass</code> file, which you can use to customize your own version of TARDIG.</p><a class="cta" href="files/tardig-sass.zip" download>Download Sass</a>
                   </div>
                 </div>
               </div>
@@ -55,141 +56,103 @@
               <section id="overview-introduction">
                 <h4>Introduction</h4>
                 <p>TARDIG contains 4 main features: normalize.css, a mobile-first grid system, a modular type scale, and development assistance tools.</p>
-                <p>All classes with a breakpoint segment can also be written as a static class, omitting the breakpoint segment to use that styling across all screen sizes. For example, <code>.col-xs-10</code> could be written as <code>.col-10</code></p>
+                <p>Other features include media objects, image helper classes, and responsive embeds.</p>
+                <p>All classes with a breakpoint segment can also be written as a static class, omitting the breakpoint segment to use that styling across all screen sizes. For example, <code>.col-xs-10</code> could be written as <code>.col-10</code>.</p>
                 <p>Throughout this documentation, within class names, <code>-**</code> represents the breakpoint segment of a class. <code>-*</code> represents the desired effect. For example, the 6 in <code>.col-sm-6</code> would mean that the column spans 6 available columns.</p>
               </section>
-              <section id="overview-components">
-                <div id="overview-thegrid">
-                  <h4>The Grid Overview</h4>
-                  <div class="row hide show-xs-block">
-                    <div class="col-md-8 offset-md-2"><code>
-                        <pre>&lt;div class=&quot;container&quot;&gt;
-  &lt;div class=&quot;row padded&quot;
-    &lt;div class=&quot;col-4 col-md-2&quot;&gt;...&lt;/div&gt;
-    &lt;div class=&quot;col-8 col-md-10&quot;&gt;...&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;row padded&quot;&gt;
-    &lt;div class=&quot;col-md-3&quot;&gt;...&lt;/div&gt;
-    &lt;div class=&quot;col-md-3&quot;&gt;...&lt;/div&gt;
-    &lt;div class=&quot;col-md-3&quot;&gt;...&lt;/div&gt;
-    &lt;div class=&quot;col-md-3&quot;&gt;...&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;ul class=&quot;block-grid-xs-6 padded&quot;&gt;
-    &lt;li&gt;...&lt;/li&gt;
-    &lt;li&gt;...&lt;/li&gt;
-    &lt;li&gt;...&lt;/li&gt;
-    &lt;li&gt;...&lt;/li&gt;
-    &lt;li&gt;...&lt;/li&gt;
-    &lt;li&gt;...&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;div class=&quot;row padded&quot;&gt;
-    &lt;div class=&quot;col-0 col-xs-4&quot;&gt;...&lt;/div&gt;
-    &lt;div class=&quot;col-12 col-xs-8&quot;&gt;...&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</pre></code></div>
+              <section id="overview-thegrid">
+                <h4>The Grid Overview</h4>
+                <pre><code><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">container</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">row padded</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">col-4 col-md-2</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">col-8 col-md-10</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">row padded</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">col-md-3</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">col-md-3</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">col-md-3</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">col-md-3</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">ul</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">block-grid-xs-6 padded</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">li</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">li</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">li</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">li</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">li</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">li</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">li</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">li</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">li</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">li</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">li</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">li</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">ul</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">row padded</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">col-0 col-xs-4</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">col-12 col-xs-8</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></code></pre>
+                <div class="example-grid hide show-xs-block">
+                  <div class="row padded">
+                    <div class="col-4 col-md-2"></div>
+                    <div class="col-8 col-md-10"></div>
                   </div>
-                  <div class="example-grid hide show-xs-block">
-                    <div class="row padded">
-                      <div class="col-4 col-md-2">
-                        <div></div>
-                      </div>
-                      <div class="col-8 col-md-10">
-                        <div></div>
-                      </div>
-                    </div>
-                    <div class="row padded">
-                      <div class="col-md-3">
-                        <div></div>
-                      </div>
-                      <div class="col-md-3">
-                        <div></div>
-                      </div>
-                      <div class="col-md-3">
-                        <div></div>
-                      </div>
-                      <div class="col-md-3">
-                        <div></div>
-                      </div>
-                    </div>
-                    <ul class="block-grid-xs-6 padded">
-                      <li>
-                        <div></div>
-                      </li>
-                      <li>
-                        <div></div>
-                      </li>
-                      <li>
-                        <div></div>
-                      </li>
-                      <li>
-                        <div></div>
-                      </li>
-                      <li>
-                        <div></div>
-                      </li>
-                      <li>
-                        <div></div>
-                      </li>
-                    </ul>
-                    <div class="row padded">
-                      <div class="col-0 col-xs-4">
-                        <div></div>
-                      </div>
-                      <div class="col-12 col-xs-8">
-                        <div></div>
-                      </div>
-                    </div>
+                  <div class="row padded">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3"></div>
                   </div>
-                  <p>Rows must be wrapped in a <code>.container</code> to preserve alignment and paddings. Only columns should be direct children of rows, and columns should contain the content of the page.</p>
-                  <p>Block grids are supported, and <code>.block-grid-**-*</code> acts as a row. If you use the block grid as an unordered list, a classless <code>li</code> element acts as a column. Alternatively, you can make a <code>div</code> a block grid, and the direct children should all have the class <code>.block-item</code>. A block grid can be as many columns as your grid supports. By default, that is 12.</p>
-                  <p>In both block grids and standard grids, columns that exceed the number of available columns will wrap to the next line. Columns do not have to equal the total amount either.</p>
-                  <p>Pushes, pulls, offsets, padding, and display classes are also included with responsive and static versions.</p>
-                  <p>Containers, rows, columns, block grids, and block items (or &lt;li&gt;s) are given box-sizing: border-box to maintain proper sizing. Unlike most other frameworks and boilerplates, no other element has been modified. This makes it easier to have full control of your design.</p>
-                  <div class="text-center"><a class="cta" href="#thegrid">Learn More</a></div>
-                </div>
-                <div id="overview-typography">
-                  <h4>Typography Overview</h4>
-                  <div class="example-typography">
-                    <ul class="block-grid-7 flex-baseline reverse">
-                      <li>
-                        <h1>h1</h1>
-                      </li>
-                      <li>
-                        <h2>h2</h2>
-                      </li>
-                      <li>
-                        <h3>h3</h3>
-                      </li>
-                      <li>
-                        <h4>h4</h4>
-                      </li>
-                      <li>
-                        <h5>h5</h5>
-                      </li>
-                      <li>
-                        <h6>h6</h6>
-                      </li>
-                      <li>
-                        <p>p</p>
-                      </li>
-                    </ul>
+                  <ul class="block-grid-xs-6 padded">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <div class="row padded">
+                    <div class="col-0 col-xs-4"></div>
+                    <div class="col-12 col-xs-8"></div>
                   </div>
-                  <p>Fonts are sized in TARDIG using rems and a modular scale. By default, the scale's ratio is 1.125. A <code>p</code> tag is sized at 1rem and each larger font (h6 through h1) is sized up by multiplying by 1.125. Fonts smaller than 1rem are divided by 1.125.</p>
-                  <p>Line heights are calculated based on a baseline-height. The default is 1.5 and any font sized 1rem or less has a 1.5 line-height. Each larger font has a line-height determined by the formula: <code>ceil(font-size / baseline-height) * (baseline-height / font-size)</code></p>
-                  <p>TARDIG sets only the font-size and line-height based on a modular scale. Most other frameworks will pick fonts and various other stylings for you. As this is meant to be a starting point, TARDIG includes a <code>_custom.sass</code> partial in the typography folder where you can write your own custom styles and import fonts.</p>
-                  <p>Also included are static and responsive classes for alignment, decorations, and transforms. Each of these uses the prefix <code>.text</code>, optionally followed by a breakpoint segment, and the effect suffix.</p>
-                  <p>Decoration and transform classes can be cleared on larger screens using <code>-nodecoration</code> and <code>-notransform</code></p>
-                  <div class="text-center"><a class="cta" href="#typography">Learn More</a></div>
                 </div>
-                <div id="overview-development">
-                  <h4>Development Assistance Overview</h4>
-                  <p>Browsers such as Chrome and Firefox have their own built-in developer tools, but sometimes they aren't the easiest way to find errors. TARDIG has a small set of tools created to work side by side with these other tools and make the developer's life easier.</p>
-                  <p>Currently, there are 2 tools for developers. These are not to be used in production, and should always be added to the body tag. If you plan on keeping one running for a while, you can put it in your code, but if you're looking for a small error in positioning it is recommended that you include it in something like Chrome's DevTools. Doing that ensures that it won't be saved to your file.</p>
-                  <p>First is a grid underlay, using the class <code>.development-grid</code>. What this does is gives the container element a background of the grid, calculated by your own custom grid or using the default 12-column grid. Gutters are highlighted in pink. Since this is a background, all of your content will be given an opacity, but will still be fully functional and on top.</p>
-                  <p>The other developer tool is called codeframing using the class <code>.development-codeframe</code>. This outlines the container (red), the rows and block-grids (green), and the columns and block-items (blue). This is to be used in conjunction with an element inspector, and is meant to make weirdly rendered elements easier to find. You can also use this to code a basic wireframe, hence the name.</p>
-                  <div class="text-center"><a class="cta" href="#development">Learn More</a></div>
+                <p>Rows must be wrapped in a <code>.container</code> to preserve alignment and paddings. Only columns should be direct children of rows, and columns should contain the content of the page.</p>
+                <p>Block grids are supported, and <code>.block-grid-**-*</code> acts as a row. If you use the block grid as an unordered list, a classless <code>li</code> element acts as a column. Alternatively, you can make a <code>div</code> a block grid, and the direct children should all have the class <code>.block-item</code>. A block grid can be as many columns as your grid supports. By default, that is 12.</p>
+                <p>In both block grids and standard grids, columns that exceed the number of available columns will wrap to the next line. Columns do not have to equal the total amount either.</p>
+                <p>Pushes, pulls, offsets, padding, and display classes are also included with responsive and static versions.</p>
+                <p>Containers, rows, columns, block grids, and block items (or &lt;li&gt;s) are given box-sizing: border-box to maintain proper sizing. Unlike most other frameworks and boilerplates, no other element has been modified. This makes it easier to have full control of your design.</p>
+                <div class="text-center"><a class="cta" href="#thegrid">Learn More</a></div>
+              </section>
+              <section id="overview-typography">
+                <h4>Typography Overview</h4>
+                <div class="example-typography">
+                  <ul class="block-grid-7 flex-baseline reverse">
+                    <li>
+                      <h1>h1</h1>
+                    </li>
+                    <li>
+                      <h2>h2</h2>
+                    </li>
+                    <li>
+                      <h3>h3</h3>
+                    </li>
+                    <li>
+                      <h4>h4</h4>
+                    </li>
+                    <li>
+                      <h5>h5</h5>
+                    </li>
+                    <li>
+                      <h6>h6</h6>
+                    </li>
+                    <li>
+                      <p>p</p>
+                    </li>
+                  </ul>
                 </div>
+                <p>Fonts are sized in TARDIG using rems and a modular scale. By default, the scale's ratio is 1.125. A <code>p</code> tag is sized at 1rem and each larger font (h6 through h1) is sized up by multiplying by 1.125. Fonts smaller than 1rem are divided by 1.125.</p>
+                <p>Line heights are calculated using a baseline height. By default, this is 1.5rem, but can be changed in the Sass version.</p>
+                <p>Also included are static and responsive classes for alignment, decorations, and transforms. Each of these uses the prefix <code>.text</code>, optionally followed by a breakpoint segment, and the effect suffix.</p>
+                <p>Decoration and transform classes can be cleared on larger screens using <code>-nodecoration</code> and <code>-notransform</code></p>
+                <div class="text-center"><a class="cta" href="#typography">Learn More</a></div>
+              </section>
+              <section id="overview-development">
+                <h4>Development Assistance Overview</h4>
+                <p>Browsers such as Chrome and Firefox have their own built-in developer tools, but sometimes they aren't the easiest way to find errors. TARDIG has a small set of tools created to work side by side with these other tools and make the developer's life easier.</p>
+                <p>Currently, there are 2 tools for developers. These are not to be used in production, and should always be added to the body tag. If you plan on keeping one running for a while, you can put it in your code, but if you're looking for a small error in positioning it is recommended that you include it in something like Chrome's DevTools. Doing that ensures that it won't be saved to your file.</p>
+                <p>First is a grid underlay, using the class <code>.development-grid</code>. What this does is gives the container element a background of the grid, calculated by your own custom grid or using the default 12-column grid. Gutters are highlighted in pink. Since this is a background, all of your content will be given an opacity, but will still be fully functional and on top.</p>
+                <p>The other developer tool is called codeframing using the class <code>.development-codeframe</code>. This outlines the container (red), the rows and block-grids (green), and the columns and block-items (blue). This is to be used in conjunction with an element inspector, and is meant to make weirdly rendered elements easier to find. You can also use this to code a basic wireframe, hence the name.</p>
+                <div class="text-center"><a class="cta" href="#development">Learn More</a></div>
               </section>
             </article>
             <hr class="long-rule">
@@ -235,27 +198,19 @@
                     </table>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-xs-6 offset-xs-3 col-lg-4 offset-lg-4"><code>
-                      <pre>&lt;div class=&quot;container&quot;&gt;
-  ...
-&lt;/div&gt;
-</pre></code></div>
-                </div>
+                <pre><code><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">container</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></code></pre>
+                <pre><code><span class="symbol">&lt;</span><span class="element">body</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">responsive</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">container</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">body</span><span class="symbol">&gt;
+</span></code></pre>
               </section>
               <section id="thegrid-rows">
                 <h4>Rows</h4>
                 <p>Rows are direct children of containers. Only columns should be direct children of rows. They provide negative left and right margins equal to the gutter width to ensure that non-grid items line up with grid items.</p>
                 <p>You can nest rows thanks to fixed-pixel gutters. Nested rows should reside inside columns, as the negative margin offsets the padding for the gutters.</p>
-                <div class="row">
-                  <div class="col-xs-6 offset-xs-3 col-lg-4 offset-lg-4"><code>
-                      <pre>&lt;div class=&quot;container&quot;&gt;
-  &lt;div class=&quot;row&quot;&gt;
-    ...
-  &lt;/div&gt;
-&lt;/div&gt;
-</pre></code></div>
-                </div>
+                <pre><code><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">container</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">row</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></code></pre>
               </section>
               <section id="thegrid-columns">
                 <h4>Columns</h4>
@@ -298,33 +253,36 @@
                 <p>If you only define, for example, a medium screen column (<code>.col-md-*</code>) then smaller viewports will make that column span 100% of the container.</p>
                 <p>Columns don't need to add up to the maximum number of available per row (12). If they fall short, they will simply leave a space to the right spanning the remainder of the columns. Alternatively, if you exceed the maximum, each grouping will wrap to the next line as a whole.</p>
                 <p>To hide a column on smaller (or larger) screens, you can use the number 0 at the suffix of the class to give it a 0% width and no display.</p>
+                <pre><code><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">container</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">row</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">col-0 col-sm-4</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">col-sm-8</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">col-sm-6</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">col-sm-3</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></code></pre>
+                <p>In the above example, on screens smaller than 480px, there will be three rows with the content at 100% width, the first one in the markup being hidden. On small screens and up (480px+), there will be two rows, the second spanning 9 columns of the available 12.s</p>
               </section>
               <section id="thegrid-block-grid">
                 <h4>Block Grids</h4>
-                <p>Block grids are shorthand grids with equal-width columns and are perfect for things like image galleries or thumbnails.</p>
+                <p>Block grids are shorthand grids with equal-width columns and are perfect for things like image galleries or thumbnails. They also contain static and responsive classes.</p>
                 <p>The syntax is slightly different for block grids. They start with the class <code>.block-grid-**-*</code> typically on an unordered list, as a row. Like regular rows, block grids can be nested within columns, or other block grids. If you use the block grid in a div, the children (or columns) should have the class <code>.block-item</code>.</p>
                 <p>The number at the end of the row class should be the number of items in each row, rather than how many columns it will span. For example, <code>.block-grid-4</code> will have 4 items per row on all screen sizes. The number of items can be from 1 to the maximum number of columns in your grid.</p>
-                <div class="row">
-                  <div class="col-sm-10 offset-sm-1 col-md-8 offset-md-2"><code>
-                      <pre>&lt;ul class=&quot;block-grid-2 block-grid-sm-4&quot;&gt;
-  &lt;li&gt;...&lt;/li&gt;
-  &lt;li&gt;...&lt;/li&gt;
-  &lt;li&gt;...&lt;/li&gt;
-  &lt;li&gt;...&lt;/li&gt;
-&lt;/ul&gt;
-</pre></code><code>
-                      <pre>&lt;div class=&quot;block-grid-2 block-grid-sm-4&quot;&gt;
-  &lt;div class=&quot;block-item&quot;&gt;...&lt;/div&gt;
-  &lt;div class=&quot;block-item&quot;&gt;...&lt;/div&gt;
-  &lt;div class=&quot;block-item&quot;&gt;...&lt;/div&gt;
-  &lt;div class=&quot;block-item&quot;&gt;...&lt;/div&gt;
-&lt;/div&gt;
-</pre></code></div>
-                </div>
+                <pre><code><span class="symbol">&lt;</span><span class="element">ul</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">block-grid-2 block-grid-sm-4</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">li</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">li</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">li</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">li</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">li</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">li</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">li</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">li</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">ul</span><span class="symbol">&gt;
+</span></code></pre>
+                <pre><code><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">block-grid-2, block-grid-sm-4</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">block-item</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">block-item</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">block-item</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">block-item</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></code></pre>
               </section>
               <section id="thegrid-gutters">
                 <h4>Gutters</h4>
-                <p>Gutters in TARDIG are by default 15px on either side of each column. This is the same size used to determine the padding in the container and the negative margin in the rows. You can alter the size in the <code>_variables.sass</code> file in the grid folder.</p>
+                <p>Gutters are the spacing between column groups. By default, they are 15px on either side. This is the same size as the padding on the container and negative margins on the rows. You can alter this using Sass by going into the grid folder and editing the variable <code>$gutter</code> in the <code>_variables.sass</code> file.</p>
               </section>
               <section id="thegrid-nesting">
                 <h4>Nesting</h4>
@@ -332,9 +290,15 @@
               </section>
               <section id="thegrid-alignment">
                 <h4>Alignment &amp; Ordering</h4>
-                <p>TARDIG supports pushes, pulls, and offsets. Offsets essentially replicate "missing" columns to push sections over. You can use this to center or right-align columns. Pushes and pulls are used for ordering sections, which can be helpful for responsive design and SEO.</p>
-                <p>Pushes, pulls, and offsets all support both static and responsive classes.</p>
-                <p>You can override pushes, pulls, and offsets with the suffix 0.</p>
+                <p>TARDIG supports pushes, pulls, and offsets using static or responsive classes.</p>
+                <p>Offsets replicate "missing" columns, allowing you to center or right-align content to the grid.</p>
+                <p>Pushes and pulls use absolute positioning to push or pull content by a set number of columns. You can use this for content ordering, keeping your markup SEO-friendly by placing more important content first while maintaining your design, or moving things based on screen dimensions.</p>
+                <pre><code><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">row</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">col-md-9 push-md-3</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">col-0 col-md-3 pull-md-9</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></code></pre>
+                <p>This is the layout this docs page is written in. The first column section is 12 columns on screens below 768px, and 9 columns pushed right by 3 columns on screens larger than 768px.</p>
+                <p>The second column section is hidden on screens smaller than 768px, and 3 columns wide on screens larger than 768px pulled to the left by 9 columns. This creates a sidebar with the content in the markup first.</p>
                 <div class="row">
                   <div class="col-sm-8 offset-sm-2">
                     <table>
@@ -364,7 +328,7 @@
               </section>
               <section id="thegrid-display">
                 <h4>Display</h4>
-                <p>TARDIG has static and responsive classes for all hide and show options. As columns have their own class to hide and show them, and are block level elements by default, it is recommended to use this for rows, containers, or non-grid items. They also have static and responsive classes.</p>
+                <p>TARDIG has static and responsive classes for all hide and show options. As columns have their own class to hide and show them, and are block level elements by default, it is recommended to use this for rows, containers, or non-grid items.</p>
                 <div class="row">
                   <div class="col-sm-8 offset-sm-2">
                     <table>
@@ -395,6 +359,29 @@
                     </table>
                   </div>
                 </div>
+                <pre><code><span class="symbol">&lt;</span><span class="element">p</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">hide show-md-inline-block</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">p</span><span class="symbol">&gt;
+</span></code></pre>
+                <p>The above will hide a paragraph on screens smaller than 768px, and display them as inline-block elements on screens 768px and larger.</p>
+              </section>
+              <section id="thegrid-flexbox">
+                <h4>Flexbox</h4>
+                <p>You can use the class <code>.flex-grid</code> as a container element, or inside of a container to create a flexbox grid. The big difference between this and a standard grid is that you can simply use the class <code>.col</code> to define a column section, and flexbox will calculate the width for you. You can still use the standard grid classes to determine a specific width.</p>
+                <pre><code><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">flex-grid</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">row</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">col-2</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">col</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">col</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></code></pre>
+                <p>The above example will display a grid with the first column spanning 2 columns, and the next two will spread evenly across the remaining space (totalling five columns each).</p>
+                <div class="example-grid">
+                  <div class="flex-grid">
+                    <div class="row padded">
+                      <div class="col-2"></div>
+                      <div class="col"></div>
+                      <div class="col"></div>
+                    </div>
+                  </div>
+                </div>
               </section>
             </article>
             <hr class="long-rule">
@@ -402,20 +389,20 @@
               <h1>Typography</h1>
               <section id="type-sizes">
                 <h4>Font Sizing</h4>
-                <p>Fonts are sized using a modular scale and rems. You can set the base font size in pixels in your own custom stylesheet or in the custom partial sheet provided in the typography folder.</p>
+                <p>Fonts are sized using a modular scale and rems. You can set the base font size in pixels in your own custom stylesheet or in the custom partial sheet provided in the typography folder. Browsers typically default this at 16px.</p>
                 <p>By default, the scale has the ratio of 1.125, but you can change that using the <code>_variables.sass</code> file in the typography folder. This means that your p will be 1rem, or your base font size. Each size up is multiplied by 1.125, or whatever you change the custom ratio to.</p>
                 <p>The <code>.lead</code> class increases the font size to the next level in the scale, while <code>.small</code> or the element <code>small</code> decrease the size by next level down the scale.</p>
                 <p>You can also override this using your own custom sheets or the blank custom sheet provided if using a scale doesn't work for you.</p>
               </section>
               <section id="type-line-height">
                 <h4>Line Heights</h4>
-                <p>Line heights are based on a baseline height. By default, that is 1.5. Font sizes 1rem and smaller get a line height of 1.5, and anything larger gets calculated by the formula: <code>ceil(font size / base line height) * (base line height / font size)</code></p>
+                <p>Line heights are based on a baseline height. By default, that is 1.5.</p>
                 <p>Like font sizes, line heights can be overwritten in a custom stylesheet.</p>
               </section>
               <section id="type-alignment">
                 <h4>Text Alignment</h4>
                 <p>There are 9 text alignment classes. The "last" classes are experimental classes and may not always work.</p>
-                <p>While the "push-up" class isn't a standard alignment class, it still fits in this category. What that does is pushes a block of text up by the negative baseline height to tighten it up with a preceeding block of text. This is useful for things like subheadings.</p>
+                <p>The class <code>.text-push-up</code> is used to add a negative top margin equal to the bottom margin. It should only be used preceeding other text blocks, otherwise it will hide some of the content.</p>
                 <div class="row">
                   <div class="col-sm-8 offset-sm-2">
                     <table>
@@ -566,16 +553,148 @@
               <p class="text-push-up small">Note: These tools are to be used for testing only and should not appear in the final product.</p>
               <section id="dev-grid">
                 <h4>Grid Underlay</h4>
-                <p>The grid underlay can be used by adding the class <code>.development-grid</code> to either the body tag, a parent to the container(s), or a container itself. How this works is it gives all the child elements a transparency and the container gets a background image of the grid using pink as the default color for gutters.</p>
+                <p>The grid underlay can be used by adding the class <code>.development-grid</code> to either the body tag, a parent to the container(s), or a container itself. How this works is it gives all the child elements a transparency and the container gets a background image of the grid using pink as the default color for gutters. <small>Note: if you have a background image on your container, TARDIG uses !important to override that.</small></p>
                 <p>Don't worry if you change your number of columns in the grid. Grid Underlay will automatically recalculate the number of columns for you.</p>
-                <p>This is extremely beneficial if you are using a lot of non-grid items to help ensure that they are lining up properly with your grid items.</p>
+                <div class="text-center"><a class="cta" data-role="toggleGrid">View Demo</a></div>
               </section>
               <section id="dev-codeframe">
                 <h4>Codeframe</h4>
                 <p>Codeframing uses the class <code>.development-codeframe</code> and can be used for multiple things. You can set heights on specific elements and use it as a coded wireframe using the grid system. You can also use it in conjunction with DevTools to find errors more easily.</p>
                 <p>Rather than strictly using DevTools to find errors, the outlining in codeframe will help to instantly find any and all issues, which you can experiment with in DevTools to find a solution.</p>
+                <div class="text-center"><a class="cta" data-role="toggleCodeframe">View Demo</a></div>
               </section>
             </article>
+            <hr class="long-rule">
+            <article id="components">
+              <h1>Components</h1>
+              <p>TARDIG includes responsive embeds, image helpers, and media objects.</p>
+              <section id="components-embed">
+                <h4>Responsive Embeds</h4>
+                <p>To make your embeds responsive, wrap the embedded element in a container with the class <code>.embed-container</code>. By default, this is a 4:3 ratio. To change it to a 16:9 ratio, use the class <code>.embed-container-16x9</code>.</p>
+                <p>If you're using vanilla CSS for your project, to create a new ratio, you can create a class with the prefix <code>.embed-container-</code> and any suffix you'd like. This will take all of the styles from the default embed container code and the only line you'll have to add is a bottom margin of the height divided by the width (as a percentage).</p>
+                <pre><code><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">embed-container-custom</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock">// Bottom padding is equal to width / height * 100 * 1%</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></code></pre>
+                <p>Alternatively, if you're using Sass, you can call the mixin <code>embedRatio(<em>width, height</em>)</code> and it will automatically create the class of <code>.embed-container-<em>(width)</em>x<em>(height)</em></code>.</p>
+                <pre><code><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">embed-container-12x10</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock">// +embedRatio(12, 10)</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></code></pre>
+                <div class="embed-container-16x9"><iframe width="560" height="315" src="https://www.youtube.com/embed/L0_BPkHZVeE?rel=0&iv_load_policy=3" frameborder="0" allowfullscreen></iframe></div>
+              </section>
+              <section id="components-media">
+                <h4>Media &amp; Flag Objects</h4>
+                <p>There are 3 ways to include media objects. Flexbox Media Objects, Media Objects, and Flag Objects.</p>
+                <p>Standard media objects are recommended for most cases, but if you need vertical alignment, you'll need to use the flexbox media object or for older browser support, flag objects.</p>
+                <h5>Media Object</h5>
+                <p>Media objects are wrapped in the container <code>.media</code>, with the children <code>.media-left</code> and/or <code>.media-right</code> and <code>.media-body</code> .</p>
+                <p><code>.media-left</code> and <code>.media-right</code> MUST be placed before the <code>.media-body</code> element due to the floating nature of media objects.</p>
+                <p>The media left and right classes can be attatched directly to the image (or whatever media object you use), as well as to a parent container.</p>
+                <pre><code><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">media</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">img</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">media-left</span><span class="symbol">&quot;</span><span class="attr"> src</span><span class="symbol">=&quot;</span><span class="value">...</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span>
+</span><span class="symbol">&lt;</span><span class="element">img</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">media-right</span><span class="symbol">&quot;</span><span class="attr"> src</span><span class="symbol">=&quot;</span><span class="value">...</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span>
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">media-body</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">p</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">p</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></code></pre>
+                <div class="media"><img class="media-left" src="http://placehold.it/64x64">
+                  <div class="media-body">
+                    <h4>Standard media object</h4>
+                    <p class="text-push-up">This is a standard media object. This utilizes the <code>text-push-up</code> class on the paragraph tag to tighten it up to the heading tag. The object is floated to the left while the body content is a block-level element to the right. This is useful for blog posts, forums, or anything your heart desires.</p>
+                  </div>
+                </div>
+                <div class="media"><img class="media-right" src="http://placehold.it/64x64">
+                  <div class="media-body">
+                    <h4>Reversed media object</h4>
+                    <p class="text-push-up">This is a reversed media object, with the object floated right and the content in a block-level element to the left.</p>
+                  </div>
+                </div>
+                <div class="media"><img class="media-left" src="http://placehold.it/64x64"><img class="media-right" src="http://placehold.it/64x64">
+                  <div class="media-body">
+                    <h4>Double sided media object</h4>
+                    <p class="text-push-up">This is a media object with objects floated on both sides. Due to the floating nature of the objects, both of them must be placed before the body content in the markup for the standard media object.</p>
+                  </div>
+                </div>
+                <h5>Flag Object</h5>
+                <p>The flag object is a little more versatile than the media object due to it being created with CSS tables, meaning that you can vertically align the objects, body, or both. Because of this, the object should be placed inside a container rather than the class being attached to the object itself.</p>
+                <p>Because the flag object uses a table-based format, the left object should should be placed before the body content in the markup and the right object should be placed after.</p>
+                <pre><code><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">flag</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">flag-left flag center</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">img</span><span class="attr"> src</span><span class="symbol">=&quot;</span><span class="value">...</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span>
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">flag-body</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">p</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">p</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">flag-right</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">img</span><span class="attr"> src</span><span class="symbol">=&quot;</span><span class="value">...</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span>
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></code></pre>
+                <div class="flag">
+                  <div class="flag-left"><img src="http://placehold.it/64x64"></div>
+                  <div class="flag-body">
+                    <h4>Standard flag body</h4>
+                    <p class="text-push-up">Flag objects, like media objects can have the object on either the left or the right side. The difference is that the right-aligned object should be placed AFTER the body content in the markup. Also, the object should be placed inside a container to allow for vertical alignment.</p>
+                  </div>
+                </div>
+                <div class="flag">
+                  <div class="flag-left flag-middle"><img src="http://placehold.it/64x64"></div>
+                  <div class="flag-body">
+                    <h4>Middle-aligned object, standard flag body</h4>
+                    <p class="text-push-up">Flag objects can use the classes <code>.flag-top</code>, <code>.flag-middle</code>, or <code>.flag-bottom</code> on either the container or any of the elements inside to vertically align either all of the content or specific elements.</p>
+                  </div>
+                </div>
+                <div class="flag">
+                  <div class="flag-body">
+                    <h4>Right/bottom-aligned object, standard flag body</h4>
+                    <p class="text-push-up">This is to showcase that flag objects can be placed to right and bottom-aligned. Only use flag objects if you plan on vertically aligning the objects, since table layouts are generally frowned upon.</p>
+                  </div>
+                  <div class="flag-right flag-bottom"><img src="http://placehold.it/64x64"></div>
+                </div>
+                <h5>Flex Media Object</h5>
+                <p>The flexbox media object is very similar to the flag object with the class names of the media object. The two big syntax differences are the addition of the prefix <code>flex-</code> to the container element and the vertical alignment classes with the prefix <code>media</code>.</p>
+                <p>Like the flag object, you can put the vertical alignment classes on either the container element, or directly on the object or content elements. Like the media object, you can place classes directly on the object without using a container for them. Content should always be wrapped in a container.</p>
+                <pre><code><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">flex-media</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">img</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">media-left</span><span class="symbol">&quot;</span><span class="attr"> src</span><span class="symbol">=&quot;</span><span class="value">...</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span>
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">media-body</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">p</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">p</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">img</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">media-right media-bottom</span><span class="symbol">&quot;</span><span class="attr"> src</span><span class="symbol">=&quot;</span><span class="value">...</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span>
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></code></pre>
+                <div class="flex-media media-middle"><img class="media-left" src="http://placehold.it/64x64">
+                  <div class="media-body">
+                    <h4>Flexbox media object</h4>
+                    <p class="text-push-up">Flexbox media objects are kind of a perfect mix of media objects and flag objects. Like flag objects, they can be vertically aligned, and the markup includes the left object above the body content, and the right object below. If you include the vertical alignment class (this time using the prefix <code>media</code> instead of <code>flag</code>) to the object.</p>
+                  </div>
+                </div>
+                <div class="flex-media"><img class="media-left" src="http://placehold.it/64x64">
+                  <div class="media-body">
+                    <h4>Double sided flexbox media object</h4>
+                    <p class="text-push-up">This example uses the left and right tags on the images as well as the vertical alignment tags. This example would work great for blockquotes, with quotation mark icons for your objects.</p>
+                  </div><img class="media-right media-bottom" src="http://placehold.it/64x64">
+                </div>
+                <h5>Nesting</h5>
+                <p>You can nest one media/flag object inside of another. Any of them are nestable interchangably. Below is an example of a standard media object nested inside of a flexbox media object.</p>
+                <pre><code><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">flex-media flex-middle</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">img</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">media-left</span><span class="symbol">&quot;</span><span class="attr"> src</span><span class="symbol">=&quot;</span><span class="value">...</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">img</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">media-body</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">p</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">p</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">media</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">img</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">media-left</span><span class="symbol">&quot;</span><span class="attr"> src</span><span class="symbol">=&quot;</span><span class="value">...</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">img</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">media-body</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">p</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">p</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+</span></code></pre>
+                <div class="flex-media media-middle"><img class="media-left" src="http://placehold.it/64x64">
+                  <div class="media-body">
+                    <h4>Top-level media object (flex)</h4>
+                    <p class="text-push-up">As you can see, the nested media object is placed inside of the body content of the flex media object. This allows for proper alignment. This flex object is given the class <code>media-middle</code> to middle-align all elements within the object.</p>
+                    <div class="media"><img class="media-left" src="http://placehold.it/50x50">
+                      <div class="media-body">
+                        <h4>2nd tier media object (standard)</h4>
+                        <p class="text-push-up">As this is a nested media object, the <code>media-middle</code> class styles have been overwritten for this object. Everything is top-aligned as they should be for a standard media object.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section id="components-images">
+                <h4>Images</h4>
+                <p>Images can be made better for your responsive design. By adding the class <code>.img-responsive</code> it is given a max-width of 100% of it's parent, with an auto height to keep it proportional.</p>
+                <p>To center images smaller than the width of the parent, you can add the class <code>.img-center</code>. Alternatively, you can expand small images to 100% of the parent width by adding the class <code>.img-expand</code>.</p>
+              </section>
+            </article>
+            <hr class="long-rule">
             <article id="sass">
               <h1>Using Sass</h1>
               <p>Each component of TARDIG is separated into folders, with the exception of normalize.css because it is third-party. Each of these folders contains partials which can be used to make TARDIG perfectly fit your needs. Apart from the variables files, it is not recommended that you mess with the other files unless you know what you're doing.</p>
@@ -620,12 +739,15 @@
                 <p>To use these mixins in indented Sass you can write <code>+break-**</code>, and then write your custom styles indented below it, rather than typing out <code>@media only screen and (min-width: *)</code>.</p>
               </section>
             </article>
+            <hr class="long-rule">
           </div>
           <div class="col-0 col-md-3 pull-md-9">
             <nav class="doc-nav">
               <ul>
                 <li><a href="#getting-started">Getting Started</a></li>
-                <li><a href="#overview">Overview</a>
+                <li><a href="#overview">Overview&nbsp;</a>
+                  <input type="checkbox" name="overview-docs" id="overview-docs">
+                  <label for="overview-docs"><i class="fa fa-chevron-circle-down"></i></label>
                   <ul>
                     <li><a href="#overview-introduction">Introduction</a></li>
                     <li><a href="#overview-thegrid">The Grid</a></li>
@@ -633,7 +755,9 @@
                     <li><a href="#overview-development">Development Assistance</a></li>
                   </ul>
                 </li>
-                <li><a href="#thegrid">The Grid</a>
+                <li><a href="#thegrid">The Grid&nbsp;</a>
+                  <input type="checkbox" name="grid-docs" id="grid-docs">
+                  <label for="grid-docs"><i class="fa fa-chevron-circle-down"></i></label>
                   <ul>
                     <li><a href="#thegrid-containers">Containers</a></li>
                     <li><a href="#thegrid-rows">Rows</a></li>
@@ -643,9 +767,12 @@
                     <li><a href="#thegrid-nesting">Nesting</a></li>
                     <li><a href="#thegrid-alignment">Alignment</a></li>
                     <li><a href="#thegrid-display">Display</a></li>
+                    <li><a href="#thegrid-flexbox">Flexbox</a></li>
                   </ul>
                 </li>
-                <li><a href="#typography">Typography</a>
+                <li><a href="#typography">Typography&nbsp;</a>
+                  <input type="checkbox" name="typography-docs" id="typography-docs">
+                  <label for="typography-docs"><i class="fa fa-chevron-circle-down"></i></label>
                   <ul>
                     <li><a href="#type-sizes">Font Sizes</a></li>
                     <li><a href="#type-line-height">Line Heights</a></li>
@@ -654,13 +781,26 @@
                     <li><a href="#type-transform">Text Transforms</a></li>
                   </ul>
                 </li>
-                <li><a href="#dev">Development Assistance</a>
+                <li><a href="#dev">Dev Assistance&nbsp;</a>
+                  <input type="checkbox" name="dev-docs" id="dev-docs">
+                  <label for="dev-docs"><i class="fa fa-chevron-circle-down"></i></label>
                   <ul>
                     <li><a href="#dev-grid">Grid Underlay</a></li>
                     <li><a href="#dev-codeframe">Codeframe</a></li>
                   </ul>
                 </li>
-                <li><a href="#sass">Using Sass</a>
+                <li><a href="#components">Components&nbsp;</a>
+                  <input type="checkbox" name="components-docs" id="components-docs">
+                  <label for="components-docs"><i class="fa fa-chevron-circle-down"></i></label>
+                  <ul>
+                    <li><a href="#components-embed">Responsive Embed</a></li>
+                    <li><a href="#components-media">Media Objects</a></li>
+                    <li><a href="#components-images">Images</a></li>
+                  </ul>
+                </li>
+                <li><a href="#sass">Using Sass&nbsp;</a>
+                  <input type="checkbox" name="sass-docs" id="sass-docs">
+                  <label for="sass-docs"><i class="fa fa-chevron-circle-down"></i></label>
                   <ul>
                     <li><a href="#sass-variables">Variables</a></li>
                     <li><a href="#sass-mixins">Mixins</a></li>
@@ -672,6 +812,11 @@
         </div>
       </div>
     </main>
+    <footer>
+      <div class="container">
+        <p>&copy; 2017 TARDIG by Mark Little</p>
+      </div>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="script/main.js"></script>
   </body>

@@ -1,0 +1,41 @@
+section#thegrid-columns
+  h4 Columns
+  p By default, the grid has 12 available columns. You can change this in the Sass version by going into the grid folder and editing the #[code _variables.sass] file.
+  p Columns are written with the syntax #[code .col-**-*], and are written mobile-first.
+  .row
+    .col-sm-8.offset-sm-2
+      table
+        thead
+          tr
+            th Viewport
+            th Class
+        tbody
+          tr
+            td 0px+
+            td .col-*
+          tr
+            td 480px+
+            td .col-xs-*
+          tr
+            td 768px+
+            td .col-sm-*
+          tr
+            td 992px+
+            td .col-md-*
+          tr
+            td 1200px+
+            td .col-lg-*
+
+  p If you only define, for example, a medium screen column (#[code .col-md-*]) then smaller viewports will make that column span 100% of the container.
+  p Columns don't need to add up to the maximum number of available per row (12). If they fall short, they will simply leave a space to the right spanning the remainder of the columns. Alternatively, if you exceed the maximum, each grouping will wrap to the next line as a whole.
+  p To hide a column on smaller (or larger) screens, you can use the number 0 at the suffix of the class to give it a 0% width and no display.
+
+  pre: code
+    +code('div', 'container')
+      +code('div', 'row')
+        +code('div', 'col-0 col-sm-4')
+        +code('div', 'col-sm-8')
+        +code('div', 'col-sm-6')
+        +code('div', 'col-sm-3')
+
+  p In the above example, on screens smaller than 480px, there will be three rows with the content at 100% width, the first one in the markup being hidden. On small screens and up (480px+), there will be two rows, the second spanning 9 columns of the available 12.s

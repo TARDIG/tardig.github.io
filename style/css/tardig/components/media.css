@@ -1,0 +1,85 @@
+.flex-media {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+  .flex-media .media-left {
+    margin-right: 10px; }
+  .flex-media .media-right {
+    margin-left: 10px; }
+  .flex-media .media-body {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1; }
+  .flex-media.media-top,
+  .flex-media .media-top > .media-left,
+  .flex-media .media-top > .media-body,
+  .flex-media .media-top > .media-right {
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start; }
+  .flex-media.media-middle,
+  .flex-media .media-middle > .media-left,
+  .flex-media .media-middle > .media-body,
+  .flex-media .media-middle > .media-right {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .flex-media.media-bottom,
+  .flex-media .media-bottom > .media-left,
+  .flex-media .media-bottom > .media-body,
+  .flex-media .media-bottom > .media-right {
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end; }
+
+.media {
+  overflow: hidden;
+  _overflow: visible;
+  zoom: 1; }
+  .media .media-left {
+    float: left;
+    margin-right: 10px; }
+  .media .media-right {
+    float: right;
+    margin-left: 10px; }
+  .media .media-body {
+    overflow: hidden; }
+
+.flag {
+  display: table; }
+  .flag .flag-left, .flag .flag-body, .flag .flag-right {
+    display: table-cell;
+    vertical-align: top; }
+  .flag.flag-top,
+  .flag .flag-top > .flag-left,
+  .flag .flag-top > .flag-body,
+  .flag .flag-top > .flag-right {
+    vertical-align: top; }
+  .flag.flag-middle,
+  .flag .flag-middle > .flag-left,
+  .flag .flag-middle > .flag-body,
+  .flag .flag-middle > .flag-right {
+    vertical-align: middle; }
+  .flag.flag-bottom,
+  .flag .flag-bottom > .flag-left,
+  .flag .flag-bottom > .flag-body,
+  .flag .flag-bottom > .flag-right {
+    vertical-align: bottom; }
+  .flag .flag-left {
+    padding-right: 10px; }
+  .flag .flag-right {
+    padding-left: 10px; }
+
+.flex-media, .media, .flag {
+  margin-bottom: 1.5rem; }
+  .flex-media .flex-media, .media .flex-media, .flag .flex-media, .flex-media .media, .media .media, .flag .media, .flex-media .flag, .media .flag, .flag .flag {
+    margin-bottom: 0; }

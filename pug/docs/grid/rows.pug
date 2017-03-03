@@ -1,0 +1,8 @@
+section#thegrid-rows
+  h4 Rows
+  p Rows are direct children of containers. Only columns should be direct children of rows. They provide negative left and right margins equal to the gutter width to ensure that non-grid items line up with grid items.
+  p You can nest rows thanks to fixed-pixel gutters. Nested rows should reside inside columns, as the negative margin offsets the padding for the gutters.
+
+  pre: code
+    +code('div', 'container')
+      +code('div', 'row')

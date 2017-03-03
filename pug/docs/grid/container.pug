@@ -1,0 +1,37 @@
+section#thegrid-containers
+  h4 Containers
+  p Grid sections must be wrapped in a #[code .container]. A container is fluid by default, but by adding the class #[code .responsive] to either a parent element or the container itself, it becomes responsive. To help maintain DRY markup, it is recommended to add the #[code .responsive] class to the #[code body] tag if you use multiple containers.
+  p Containers are not nestable due to padding issues. The container is given a left and right padding equal to the gutter width.
+  p Breakpoints exist at 480px, 768px, 992px, and 1200px. For the standard fluid grid, the width of the container is #[code 100% - (gutter * 2)]. This is also true for screens smaller than 480px.
+  p If you're using a responsive grid, the container sizes are:
+
+  .row
+    .col-sm-8.offset-sm-2
+      table
+        thead
+          tr
+            th Viewport
+            th Container
+        tbody
+          tr
+            td 0 - 479px
+            td 100% - (gutter * 2)
+          tr
+            td 480px - 767px
+            td 464px
+          tr
+            td 768px - 991px
+            td 750px
+          tr
+            td 992px - 1199px
+            td 970px
+          tr
+            td 1200px+
+            td 1170px
+
+  pre: code
+    +code('div', 'container')
+
+  pre: code
+    +code('body', 'responsive')
+      +code('div', 'container')

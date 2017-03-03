@@ -12,3 +12,16 @@ $(function() {
     }
   });
 });
+
+// Toggle Development Assistance Helpers
+$(document).ready(function() {
+  $('[data-role="toggleGrid"]').click(function(e) {
+    e.preventDefault();
+    $('body').toggleClass('development-grid');
+  });
+
+  $('[data-role="toggleCodeframe"]').click(function(e) {
+    e.preventDefault();
+    $('body').toggleClass('development-codeframe');
+  });
+});

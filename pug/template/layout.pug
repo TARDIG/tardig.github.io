@@ -1,0 +1,22 @@
+include mixins.pug
+doctype html
+html
+  head
+    meta(name="charset" content="utf-8")
+    meta(name="viewport" content="width=device-width, intiial-scale=1")
+    meta(name="author" content="Mark Little")
+
+    title TARDIG
+    link(rel="stylesheet" href="style/fa/css/font-awesome.min.css")
+    link(rel="stylesheet" href="style/main.css")
+
+  body.responsive
+    include header.pug
+
+    main
+      block content
+
+    footer
+      include footer.pug
+
+    block script

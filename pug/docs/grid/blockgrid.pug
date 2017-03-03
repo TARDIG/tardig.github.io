@@ -1,0 +1,19 @@
+section#thegrid-block-grid
+  h4 Block Grids
+  p Block grids are shorthand grids with equal-width columns and are perfect for things like image galleries or thumbnails. They also contain static and responsive classes.
+  p The syntax is slightly different for block grids. They start with the class #[code .block-grid-**-*] typically on an unordered list, as a row. Like regular rows, block grids can be nested within columns, or other block grids. If you use the block grid in a div, the children (or columns) should have the class #[code .block-item].
+  p The number at the end of the row class should be the number of items in each row, rather than how many columns it will span. For example, #[code .block-grid-4] will have 4 items per row on all screen sizes. The number of items can be from 1 to the maximum number of columns in your grid.
+
+  pre: code
+    +code('ul', 'block-grid-2 block-grid-sm-4')
+      +code('li')
+      +code('li')
+      +code('li')
+      +code('li')
+
+  pre: code
+    +code('div', 'block-grid-2, block-grid-sm-4')
+      +code('div', 'block-item')
+      +code('div', 'block-item')
+      +code('div', 'block-item')
+      +code('div', 'block-item')

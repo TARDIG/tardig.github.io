@@ -1,0 +1,16 @@
+section#components-embed
+  h4 Responsive Embeds
+  p To make your embeds responsive, wrap the embedded element in a container with the class #[code .embed-container]. By default, this is a 4:3 ratio. To change it to a 16:9 ratio, use the class #[code .embed-container-16x9].
+  p If you're using vanilla CSS for your project, to create a new ratio, you can create a class with the prefix #[code .embed-container-] and any suffix you'd like. This will take all of the styles from the default embed container code and the only line you'll have to add is a bottom margin of the height divided by the width (as a percentage).
+
+  pre: code
+    +code('div', 'embed-container-custom')
+      = '// Bottom padding is equal to width / height * 100 * 1%'
+
+  p Alternatively, if you're using Sass, you can call the mixin #[code embedRatio(<em>width, height</em>)] and it will automatically create the class of #[code .embed-container-<em>(width)</em>x<em>(height)</em>].
+
+  pre: code
+    +code('div', 'embed-container-12x10')
+      = '// +embedRatio(12, 10)'
+  .embed-container-16x9
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/L0_BPkHZVeE?rel=0&iv_load_policy=3" frameborder="0" allowfullscreen></iframe>

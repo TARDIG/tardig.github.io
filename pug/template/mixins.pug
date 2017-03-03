@@ -1,0 +1,37 @@
+mixin attributes(a, v)
+  span.attr= " " + a
+  if v != null
+    span.symbol= '="'
+    span.value #{v}
+    span.symbol= '"'
+
+mixin code(e, c, a, v, sc)
+  -sc = sc || false
+  if c != '' && c != null
+    span.symbol= '<'
+    span.element #{e}
+    span.attr= ' class'
+    span.symbol= '="'
+    span.value #{c}
+    span.symbol= '"'
+    if a != null
+      +attributes(a, v)
+    span.symbol= '>'
+  else
+    span.symbol= '<'
+    span.element #{e}
+    if a != null
+      +attributes(a, v)
+    span.symbol= '>'
+  if block
+    span.codeBlock
+      block
+  else
+    if sc != true
+      span.symbol ...
+  if sc != true
+    span.symbol= '</'
+    span.element #{e}
+    span.symbol= '>\n'
+  else
+    span= '\n'

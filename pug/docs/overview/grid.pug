@@ -1,0 +1,50 @@
+section#overview-thegrid
+  h4 The Grid Overview
+  pre: code
+    +code('div', 'container')
+      +code('div', 'row padded')
+        +code('div', 'col-4 col-md-2')
+        +code('div', 'col-8 col-md-10')
+      +code('div', 'row padded')
+        +code('div', 'col-md-3')
+        +code('div', 'col-md-3')
+        +code('div', 'col-md-3')
+        +code('div', 'col-md-3')
+      +code('ul', 'block-grid-xs-6 padded')
+        +code('li')
+        +code('li')
+        +code('li')
+        +code('li')
+        +code('li')
+        +code('li')
+      +code('div', 'row padded')
+        +code('div', 'col-0 col-xs-4')
+        +code('div', 'col-12 col-xs-8')
+
+  .example-grid.hide.show-xs-block
+    .row.padded
+      .col-4.col-md-2
+      .col-8.col-md-10
+    .row.padded
+      .col-md-3
+      .col-md-3
+      .col-md-3
+      .col-md-3
+    ul.block-grid-xs-6.padded
+      li
+      li
+      li
+      li
+      li
+      li
+    .row.padded
+      .col-0.col-xs-4
+      .col-12.col-xs-8
+
+  p Rows must be wrapped in a #[code .container] to preserve alignment and paddings. Only columns should be direct children of rows, and columns should contain the content of the page.
+  p Block grids are supported, and #[code .block-grid-**-*] acts as a row. If you use the block grid as an unordered list, a classless #[code li] element acts as a column. Alternatively, you can make a #[code div] a block grid, and the direct children should all have the class #[code .block-item]. A block grid can be as many columns as your grid supports. By default, that is 12.
+  p In both block grids and standard grids, columns that exceed the number of available columns will wrap to the next line. Columns do not have to equal the total amount either.
+  p Pushes, pulls, offsets, padding, and display classes are also included with responsive and static versions.
+  p Containers, rows, columns, block grids, and block items (or #{'<li>'}s) are given box-sizing: border-box to maintain proper sizing. Unlike most other frameworks and boilerplates, no other element has been modified. This makes it easier to have full control of your design.
+
+  .text-center: a.cta(href="#thegrid") Learn More

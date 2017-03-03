@@ -1,0 +1,6 @@
+section#type-sizes
+  h4 Font Sizing
+  p Fonts are sized using a modular scale and rems. You can set the base font size in pixels in your own custom stylesheet or in the custom partial sheet provided in the typography folder. Browsers typically default this at 16px.
+  p By default, the scale has the ratio of 1.125, but you can change that using the #[code _variables.sass] file in the typography folder. This means that your p will be 1rem, or your base font size. Each size up is multiplied by 1.125, or whatever you change the custom ratio to.
+  p The #[code .lead] class increases the font size to the next level in the scale, while #[code .small] or the element #[code small] decrease the size by next level down the scale.
+  p You can also override this using your own custom sheets or the blank custom sheet provided if using a scale doesn't work for you.
