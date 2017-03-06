@@ -11,18 +11,20 @@
   <body class="responsive">
     <header>
       <div class="container">
-        <div class="row">
-          <div class="col-xs-4">
-            <h1>TARDIG<small>.css</small></h1>
-          </div>
-          <div class="col-xs-8">
-            <nav>
-              <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="docs.html">Docs</a></li>
-                <li><a href="https://github.com/TARDIG/tardig" target="_blank">GitHub</a></li>
-              </ul>
-            </nav>
+        <div class="flex-grid">
+          <div class="row flex-baseline">
+            <div class="col-xs-4 text-center text-xs-left">
+              <h1>TARDIG<small>.css</small></h1>
+            </div>
+            <div class="col-xs-8">
+              <nav>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="docs.html">Docs</a></li>
+                  <li><a href="https://github.com/TARDIG/tardig" target="_blank">GitHub</a></li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
       </div>
@@ -152,7 +154,7 @@
                 <p>Currently, there are 2 tools for developers. These are not to be used in production, and should always be added to the body tag. If you plan on keeping one running for a while, you can put it in your code, but if you're looking for a small error in positioning it is recommended that you include it in something like Chrome's DevTools. Doing that ensures that it won't be saved to your file.</p>
                 <p>First is a grid underlay, using the class <code>.development-grid</code>. What this does is gives the container element a background of the grid, calculated by your own custom grid or using the default 12-column grid. Gutters are highlighted in pink. Since this is a background, all of your content will be given an opacity, but will still be fully functional and on top.</p>
                 <p>The other developer tool is called codeframing using the class <code>.development-codeframe</code>. This outlines the container (red), the rows and block-grids (green), and the columns and block-items (blue). This is to be used in conjunction with an element inspector, and is meant to make weirdly rendered elements easier to find. You can also use this to code a basic wireframe, hence the name.</p>
-                <div class="text-center"><a class="cta" href="#development">Learn More</a></div>
+                <div class="text-center"><a class="cta" href="#dev">Learn More</a></div>
               </section>
             </article>
             <hr class="long-rule">
@@ -740,6 +742,7 @@
               </section>
             </article>
             <hr class="long-rule">
+            <div class="close-demo"><i class="fa fa-times fa-3x"></i></div>
           </div>
           <div class="col-0 col-md-3 pull-md-9">
             <nav class="doc-nav">
@@ -819,5 +822,6 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="script/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
   </body>
 </html>

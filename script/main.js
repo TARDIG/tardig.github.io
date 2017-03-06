@@ -18,10 +18,27 @@ $(document).ready(function() {
   $('[data-role="toggleGrid"]').click(function(e) {
     e.preventDefault();
     $('body').toggleClass('development-grid');
+    if ($('body').hasClass('development-grid')) {
+      $('.close-demo').css('display', 'block');
+    } else {
+      $('.close-demo').css('display', 'none');
+    }
   });
 
   $('[data-role="toggleCodeframe"]').click(function(e) {
     e.preventDefault();
     $('body').toggleClass('development-codeframe');
+    if ($('body').hasClass('development-codeframe')) {
+      $('.close-demo').css('display', 'block');
+    } else {
+      $('.close-demo').css('display', 'none');
+    }
+  });
+
+  $('.close-demo').click(function(e) {
+    e.preventDefault();
+    $('body').removeClass('development-codeframe');
+    $('body').removeClass('development-grid');
+    $(this).css('display', 'none');
   });
 });

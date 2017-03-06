@@ -41,7 +41,7 @@ nav.doc-nav
         max-height: 600px
     + label
       i
-        transition: all 0.3s 0s ease-in-out
+        transition: all 0.3s 0s ease
       + ul
         max-height: 0
         overflow: hidden
@@ -85,7 +85,7 @@ p a
 
 .cta
   padding: 1em 2em
-  background: $blue
+  background: $purple
   color: $white
   text-decoration: none
   border-radius: $baseline-height-rem
@@ -93,6 +93,8 @@ p a
   +font(2)
   margin-bottom: $baseline-height-rem
   cursor: pointer
+  &.big-cta
+    box-shadow: 0 1.5rem 2rem -1rem rgba(0, 0, 0, 0.7)
 
 main
   margin: ($gutter * 2) auto
@@ -182,3 +184,10 @@ table
     margin-left: 1rem
     +break-xs
       margin-left: 2rem
+
+.close-demo
+  position: fixed
+  display: none
+  top: 1.5rem
+  right: 1.5rem
+  cursor: pointer
