@@ -4,11 +4,17 @@ header
   color: $white
 
   nav
+    width: 100%
     ul
-      display: block
+      display: flex
+      flex-flow: row nowrap
+      flex: auto
+      justify-content: space-between
       list-style-type: none
       text-align: right
       padding: 0
+      +break-xs
+        display: block
       li
         display: inline-block
         padding: 0 0 0 $baseline-height-rem

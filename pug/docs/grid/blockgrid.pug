@@ -12,8 +12,26 @@ section#thegrid-block-grid
       +code('li')
 
   pre: code
-    +code('div', 'block-grid-2, block-grid-sm-4')
+    +code('div', 'block-grid-2 block-grid-sm-4')
       +code('div', 'block-item')
       +code('div', 'block-item')
       +code('div', 'block-item')
       +code('div', 'block-item')
+
+  p Block grids also support classes for extended elements. By using the class #[code .block-grid-2], you can double the width of a block list item.
+
+  pre: code
+    +code('ul', 'block-grid-6')
+      +code('li')
+      +code('li')
+      +code('li', 'block-item-2')
+      +code('li')
+      +code('li')
+
+  .example-grid
+    ul.block-grid-6
+      li
+      li
+      li.block-item-2
+      li
+      li

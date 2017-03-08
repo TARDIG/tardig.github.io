@@ -2635,15 +2635,19 @@ hr {
   text-align: justify; }
 
 .text-right-last {
+  -moz-text-align-last: right;
   text-align-last: right; }
 
 .text-center-last {
+  -moz-text-align-last: center;
   text-align-last: center; }
 
 .text-left-last {
+  -moz-text-align-last: left;
   text-align-last: left; }
 
 .text-justify-last {
+  -moz-text-align-last: justify;
   text-align-last: justify; }
 
 .text-push-up {
@@ -2698,12 +2702,16 @@ hr {
   .text-xs-justify {
     text-align: justify; }
   .text-xs-right-last {
+    -moz-text-align-last: right;
     text-align-last: right; }
   .text-xs-center-last {
+    -moz-text-align-last: center;
     text-align-last: center; }
   .text-xs-left-last {
+    -moz-text-align-last: left;
     text-align-last: left; }
   .text-xs-justify-last {
+    -moz-text-align-last: justify;
     text-align-last: justify; }
   .text-xs-push-up {
     margin-top: -1.5rem; }
@@ -2744,12 +2752,16 @@ hr {
   .text-sm-justify {
     text-align: justify; }
   .text-sm-right-last {
+    -moz-text-align-last: right;
     text-align-last: right; }
   .text-sm-center-last {
+    -moz-text-align-last: center;
     text-align-last: center; }
   .text-sm-left-last {
+    -moz-text-align-last: left;
     text-align-last: left; }
   .text-sm-justify-last {
+    -moz-text-align-last: justify;
     text-align-last: justify; }
   .text-sm-push-up {
     margin-top: -1.5rem; }
@@ -2790,12 +2802,16 @@ hr {
   .text-md-justify {
     text-align: justify; }
   .text-md-right-last {
+    -moz-text-align-last: right;
     text-align-last: right; }
   .text-md-center-last {
+    -moz-text-align-last: center;
     text-align-last: center; }
   .text-md-left-last {
+    -moz-text-align-last: left;
     text-align-last: left; }
   .text-md-justify-last {
+    -moz-text-align-last: justify;
     text-align-last: justify; }
   .text-md-push-up {
     margin-top: -1.5rem; }
@@ -2836,12 +2852,16 @@ hr {
   .text-lg-justify {
     text-align: justify; }
   .text-lg-right-last {
+    -moz-text-align-last: right;
     text-align-last: right; }
   .text-lg-center-last {
+    -moz-text-align-last: center;
     text-align-last: center; }
   .text-lg-left-last {
+    -moz-text-align-last: left;
     text-align-last: left; }
   .text-lg-justify-last {
+    -moz-text-align-last: justify;
     text-align-last: justify; }
   .text-lg-push-up {
     margin-top: -1.5rem; }
@@ -3022,17 +3042,33 @@ header {
   background: #3498db;
   padding-top: 1.5rem;
   color: #F2F1EF; }
-  header nav ul {
-    display: block;
-    list-style-type: none;
-    text-align: right;
-    padding: 0; }
-    header nav ul li {
-      display: inline-block;
-      padding: 0 0 0 1.5rem; }
-      header nav ul li a {
-        color: #F2F1EF;
-        text-decoration: none; }
+  header nav {
+    width: 100%; }
+    header nav ul {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+      -webkit-flex: auto;
+      -ms-flex: auto;
+      flex: auto;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      list-style-type: none;
+      text-align: right;
+      padding: 0; }
+      @media only screen and (min-width: 480px) {
+        header nav ul {
+          display: block; } }
+      header nav ul li {
+        display: inline-block;
+        padding: 0 0 0 1.5rem; }
+        header nav ul li a {
+          color: #F2F1EF;
+          text-decoration: none; }
 
 html, body {
   font-size: 14.22222px;
@@ -3045,6 +3081,13 @@ html, body {
   @media only screen and (min-width: 1200px) {
     html, body {
       font-size: 18px; } }
+
+.logo {
+  margin-left: auto;
+  margin-right: auto; }
+  @media only screen and (min-width: 480px) {
+    .logo {
+      margin-left: 0; } }
 
 .container {
   overflow-x: hidden; }
@@ -3188,7 +3231,8 @@ hr {
   .example-grid [class*='block-grid-'] > .block-item {
     background: #5faee3;
     color: #196090;
-    border: 1px solid #3498db; }
+    border: 1px solid #3498db;
+    padding: 20px; }
 
 .flex-baseline {
   display: -webkit-flex;

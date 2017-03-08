@@ -14,7 +14,7 @@
         <div class="flex-grid">
           <div class="row flex-baseline">
             <div class="col-xs-4 text-center text-xs-left">
-              <h1>TARDIG<small>.css</small></h1>
+              <h1 class="logo">TARDIG<small>.css</small></h1>
             </div>
             <div class="col-xs-8">
               <nav>
@@ -275,12 +275,29 @@
 </span><span class="symbol">&lt;</span><span class="element">li</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">li</span><span class="symbol">&gt;
 </span></span><span class="symbol">&lt;/</span><span class="element">ul</span><span class="symbol">&gt;
 </span></code></pre>
-                <pre><code><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">block-grid-2, block-grid-sm-4</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">block-item</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
+                <pre><code><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">block-grid-2 block-grid-sm-4</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">block-item</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
 </span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">block-item</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
 </span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">block-item</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
 </span><span class="symbol">&lt;</span><span class="element">div</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">block-item</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
 </span></span><span class="symbol">&lt;/</span><span class="element">div</span><span class="symbol">&gt;
 </span></code></pre>
+                <p>Block grids also support classes for extended elements. By using the class <code>.block-grid-2</code>, you can double the width of a block list item.</p>
+                <pre><code><span class="symbol">&lt;</span><span class="element">ul</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">block-grid-6</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="codeBlock"><span class="symbol">&lt;</span><span class="element">li</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">li</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">li</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">li</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">li</span><span class="attr"> class</span><span class="symbol">=&quot;</span><span class="value">block-item-2</span><span class="symbol">&quot;</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">li</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">li</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">li</span><span class="symbol">&gt;
+</span><span class="symbol">&lt;</span><span class="element">li</span><span class="symbol">&gt;</span><span class="symbol">...</span><span class="symbol">&lt;/</span><span class="element">li</span><span class="symbol">&gt;
+</span></span><span class="symbol">&lt;/</span><span class="element">ul</span><span class="symbol">&gt;
+</span></code></pre>
+                <div class="example-grid">
+                  <ul class="block-grid-6">
+                    <li></li>
+                    <li></li>
+                    <li class="block-item-2"></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
               </section>
               <section id="thegrid-gutters">
                 <h4>Gutters</h4>
