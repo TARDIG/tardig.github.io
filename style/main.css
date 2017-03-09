@@ -3089,6 +3089,11 @@ html, body {
     .logo {
       margin-left: 0; } }
 
+.img-push-down {
+  margin-bottom: 0.75rem;
+  width: 100px;
+  height: auto; }
+
 .container {
   overflow-x: hidden; }
 
