@@ -2562,7 +2562,7 @@ input,
 option,
 select,
 input[type="color"] {
-  height: calc($baseline-height-rem + ($input-padding * 2)); }
+  height: calc(1.5rem + (0.1875rem * 2rem)); }
 
 input[type="checkbox"],
 input[type="radio"] {
