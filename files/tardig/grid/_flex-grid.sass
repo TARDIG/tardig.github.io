@@ -1,15 +1,15 @@
 // Flex Grid
 .flex-grid
   display: flex
-  flex-flow: column wrap
+  flex-flow: row wrap
 
   .row
-    width: 100%
+    display: flex
+    flex-flow: column wrap
+    justify-content: flex-start
     margin-left: 0
     margin-right: 0
-    display: flex
-    flex-flow: row wrap
-    justify-content: flex-start
+    width: 100%
     &::before,
     &::after
       display: none
@@ -17,6 +17,7 @@
   [class*='col']
     display: flex
     flex: auto
+    flex-flow: row wrap
     padding-left: $gutter
     padding-right: $gutter
 

@@ -40,12 +40,12 @@
 =column-sizes($screen-size)
   @for $i from 1 through $columns
     .col#{$screen-size}-#{$i}
-      width: 100% / $columns * $i
-      flex: 0 0 (100% / $columns * $i)
       display: block
+      flex: 0 0 (100% / $columns * $i)
+      width: 100% / $columns * $i
   .col#{$screen-size}-0
-    width: 0
     display: none
+    width: 0
 
 // Push
 =column-push($screen-size)
@@ -90,16 +90,17 @@
   .container.padded#{$screen-size} [class*="block-grid-"] li,
   .container.padded#{$screen-size} [class*="block-grid-"] .block-item,
   .container.padded#{$screen-size} .row [class*="col-"]
-    padding-top: $gutter
     padding-bottom: $gutter
+    padding-top: $gutter
+
   [class*="block-grid-"].not-padded#{$screen-size} li,
   [class*="block-grid-"].not-padded#{$screen-size} .block-item,
   .row.not-padded#{$screen-size} [class*="col-"],
   .container.not-padded#{$screen-size} [class*="block-grid-"] li,
   .container.not-padded#{$screen-size} [class*="block-grid-"] .block-item,
   .container.not-padded#{$screen-size} .row [class*="col-"]
-    padding-top: 0
     padding-bottom: 0
+    padding-top: 0
 
 =display($screen-size)
   .hide#{$screen-size}
